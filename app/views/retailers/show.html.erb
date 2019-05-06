@@ -1,0 +1,11 @@
+<h1><%= @retailer.name%> Information</h1>
+
+<ul>
+	<li><%= @retailer.city %></li>
+	<li><%= @retailer.state %></li>
+</ul>
+
+<%#need to make sure this link only shows for retailers%>
+<%= link_to "Browse Breweries", breweries_path %>
+
+<%#add all beers on tap list for customers to see below%>

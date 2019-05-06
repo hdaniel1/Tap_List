@@ -1,14 +1,14 @@
 class BeersController < ApplicationController
 
 	before_action :find_beer, only: [:show, :edit, :update]
+
 	def index
 		@beers = Beer.all 
 	end 
 
-
 	def show 
-		
-	end 
+		@retailerbeer = RetailerBeer.new
+	end
 
 	def new
 		@beer = Beer.new 
@@ -17,6 +17,7 @@ class BeersController < ApplicationController
 
 	def create 
 		@beer = Beer.create(beer_params)
+
 		redirect_to beer_path(@beer)
 	end 
 
@@ -25,7 +26,7 @@ class BeersController < ApplicationController
 	end 
 
 	def update
-		@beer = Beer.update(beer_params)
+		@beer.update(beer_params)
 		redirect_to beer_path(@beer)
 	end
 

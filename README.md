@@ -1,8 +1,7 @@
-APIs?
+<!-- APIs?
 -Beer Advocate (reviews, ratings, etc.)
--BreweryDB(18e47a219accd2d3855fbcd74093dd68)
 -https://github.com/gamache/beeradvocate
--https://github.com/tylerhunt/brewery_db
+-https://github.com/tylerhunt/brewery_db -->
 
 5 Models
 1. Breweries (1:N Beers)

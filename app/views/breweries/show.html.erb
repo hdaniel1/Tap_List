@@ -9,6 +9,49 @@
 Description:<br> <%= @brewery.description %></li>
 
 <h2>Available Beers</h2>
-<% @brewery.beers do |beer| %>
-	<%= link_to beer.name, beer_path(beer) %>
+<ol>
+<% @brewery.beers.each do |beer| %>
+	<li><%= link_to beer.name, beer_path(beer) %></li>
+<% end %>
+</ol>
+
+<h2>Add a new offering</h2>
+
+<%= form_for @beer do |b| %>
+	<%=b.hidden_field :brewery_id, value: @brewery.id %>
+	<div>
+	<%= b.label "Beer Name" %>
+	<%= b.text_field :name %>
+	</div>
+	<div>
+	<%= b.label "Style" %>
+	<%= b.text_field :style %>
+	</div>	
+	<div>
+	<%= b.label "ABV" %>
+	<%= b.number_field :ABV, step: :any %>
+	</div>
+	<div>
+	<%= b.label "IBU" %>
+	<%= b.number_field :IBU %>
+	</div>
+	<div>
+	<%= b.label "Available?" %>
+	<%= b.select :available, [['Yes', true], ['No', false]] %>
+	</div>
+	<div>
+	<%= b.label "Price" %>
+	<%= b.number_field :price, step: :any %>
+	</div>
+	<div>
+	<%= b.label "On Site Purchase?" %>
+	<%= b.select :on_site_purchase, [['Yes', true], ['No', false]] %>
+	</div>
+	<div>
+	<%= b.label "Glass Size (in ounces)" %>
+	<%= b.number_field :glass_size %>
+	</div>
+	<div>
+	<%= b.submit %>
+	</div>
 <% end %>

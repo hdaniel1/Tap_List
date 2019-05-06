@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_06_192316) do
+ActiveRecord::Schema.define(version: 2019_05_06_214320) do
 
   create_table "beers", force: :cascade do |t|
     t.string "name"
@@ -36,6 +36,24 @@ ActiveRecord::Schema.define(version: 2019_05_06_192316) do
     t.string "website"
     t.text "description"
     t.integer "established"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "retailer_beers", force: :cascade do |t|
+    t.integer "beer_id"
+    t.integer "retailer_id"
+    t.integer "retailer_price"
+    t.string "glass_size"
+    t.integer "number_of_barrels"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "retailers", force: :cascade do |t|
+    t.string "name"
+    t.string "city"
+    t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

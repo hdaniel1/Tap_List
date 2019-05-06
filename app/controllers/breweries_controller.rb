@@ -1,6 +1,6 @@
 class BreweriesController < ApplicationController
 
-	layout "brewery"
+	# layout "brewery"
 	
 	before_action :find_brewery, only: [:show, :edit, :update]
 	def index
@@ -8,7 +8,7 @@ class BreweriesController < ApplicationController
 	end 
 
 	def show 
-		
+		@beer = Beer.new
 	end 
 
 	def edit

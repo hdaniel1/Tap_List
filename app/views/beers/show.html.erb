@@ -9,6 +9,7 @@
 	<li>Availability: <%= @beer.availability %></li>
 	<li>On Site Purchase?: <%= @beer.on_site_purchase %></li>
 	<li>Glass Size: <%= @beer.glass_size %></li>
+	<li>Brewery: <%= link_to @beer.brewery.name, brewery_path(@beer.brewery) %></li>
 </ul>
 <div>
 Description:
@@ -21,3 +22,19 @@ Description:
 <div>
 <%= link_to "Beer List", beers_path %>
 </div>
+
+<%#this is for retailers only%>
+<h2>Add this beer to my tap list</h2>
+
+<%= form_for @retailerbeer do |r| %>
+	<%= r.hidden_field :retailer_id %>
+	<%= r.hidden_field :beer_id, value= @beer.id %>
+	<%= r.label "Your Price" %>
+	<%= r.number_field :retailer_price %>
+	<%= r.label "Your Glass Size" %>
+	<%= r.text_field :glass_size %>
+	<%= r.label "Number of Barrels" %>
+	<%= r.number_field :number_of_barrels %>
+	<%= r.submit "Add Beer" %>
+<% end %>
+

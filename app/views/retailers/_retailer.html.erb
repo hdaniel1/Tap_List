@@ -1,0 +1,17 @@
+<%= form_for @retailer do |r| %>
+	<div>
+	<%= r.label "Retailer Name" %>
+	<%= r.text_field :name %>
+	</div>
+	<div>
+	<%= r.label "Your City" %>
+	<%= r.text_field :city %>
+	</div>
+	<div>
+	<%= r.label "Your State" %>
+	<%= r.text_field :state %>	
+	</div>
+	<div>
+	<%= r.submit %>
+	</div>
+<% end %>

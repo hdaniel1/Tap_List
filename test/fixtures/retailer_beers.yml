@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  beer_id: 1
+  retailer_id: 1
+  retailer_price: 1
+
+two:
+  beer_id: 1
+  retailer_id: 1
+  retailer_price: 1
