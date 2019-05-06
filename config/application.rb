@@ -6,6 +6,10 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+brewery_db = BreweryDB::Client.new do |config|
+  config.api_key = '18e47a219accd2d3855fbcd74093dd68'
+end
+
 module TapListApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.

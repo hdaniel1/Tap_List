@@ -58,4 +58,8 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  brewery_db = BreweryDB::Client.new do |config|
+  config.api_key = '18e47a219accd2d3855fbcd74093dd68'
+end
 end
