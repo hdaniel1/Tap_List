@@ -23,7 +23,7 @@ require 'brewery_db'
 
 
 ### Beers for Brekenridge Brewery ###
-
+  
   Beer.find_or_create_by(name: "Breckenridge Christmas Ale",
   ABV: 7.4,
   style: "American Strong Pale",
