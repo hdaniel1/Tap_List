@@ -27560,3 +27560,750 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 39ms (Views: 29.2ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Anheuser-Busch InBev"], ["established", 1852], ["description", "Anheuser-Busch operates 12 breweries in the United States, 14 in China and one in the United Kingdom. Anheuser-Busch's operations and resources are focused on adding to life's enjoyment not only through the responsible consumption of beer by adults, but through theme park entertainment and packaging.  In the United States, the company holds a 48.5 percent share of U.S. beer sales. Worldwide, Anheuser-Busch's beer sales volume was 128.4 million barrels in 2007.  The St. Louis-based company's subsidiaries include one of the largest U.S. manufacturers of aluminum beverage containers and one of the world's largest recyclers of aluminum beverage cans. Anheuser-Busch also has interests in malt production, rice milling, real estate development, turf farming, metalized and paper label printing, bottle production and transportation services."], ["website", "http://www.anheuser-busch.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Create (2.6ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "website", "description", "established", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Anheuser-Busch InBev"], ["website", "http://www.anheuser-busch.com/"], ["description", "Anheuser-Busch operates 12 breweries in the United States, 14 in China and one in the United Kingdom. Anheuser-Busch's operations and resources are focused on adding to life's enjoyment not only through the responsible consumption of beer by adults, but through theme park entertainment and packaging.  In the United States, the company holds a 48.5 percent share of U.S. beer sales. Worldwide, Anheuser-Busch's beer sales volume was 128.4 million barrels in 2007.  The St. Louis-based company's subsidiaries include one of the largest U.S. manufacturers of aluminum beverage containers and one of the world's largest recyclers of aluminum beverage cans. Anheuser-Busch also has interests in malt production, rice milling, real estate development, turf farming, metalized and paper label printing, bottle production and transportation services."], ["established", 1852], ["created_at", "2019-05-06 19:09:57.821011"], ["updated_at", "2019-05-06 19:09:57.821011"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" IS NULL AND "breweries"."website" IS NULL LIMIT ?[0m  [["name", "Boston Beer Company (Samuel Adams)"], ["established", 0], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Create (0.6ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "established", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Boston Beer Company (Samuel Adams)"], ["established", 0], ["created_at", "2019-05-06 19:09:57.829510"], ["updated_at", "2019-05-06 19:09:57.829510"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Breckenridge Brewery"], ["established", 1990], ["description", "Breckenridge Brewery was founded in 1990 in Breckenridge, Colorado. In the past two plus decades Breckenridge Brewery has grown from a small 3,000-barrels-a-year brewpub to one of the most successful craft beer and restaurant companies in the nation. It now handcrafts more than 70,000 barrels of fresh beer annually and owns and operates five brewpubs and ale houses in the state of Colorado. For more information visit www.breckbrew.com."], ["website", "http://www.breckbrew.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Brouwerij De Leite"], ["established", 2008], ["description", "Brewing since 1997.  Officially transformed in 'brewery De Leite in 2008.  started with a brewingkettle of 8,5 HL.  now ( 2011) expanding to a brewing kettle of 60 HL.  Only brewing once a month."], ["website", "http://www.deleite.be/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Create (0.6ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "website", "description", "established", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Brouwerij De Leite"], ["website", "http://www.deleite.be/"], ["description", "Brewing since 1997.  Officially transformed in 'brewery De Leite in 2008.  started with a brewingkettle of 8,5 HL.  now ( 2011) expanding to a brewing kettle of 60 HL.  Only brewing once a month."], ["established", 2008], ["created_at", "2019-05-06 19:09:57.839548"], ["updated_at", "2019-05-06 19:09:57.839548"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Dock Street Brewery"], ["established", 1985], ["description", "Founded in 1985, Dock Street Brewing Co. was the first microbrewery in Philadelphia and one of the first in the country.  Today, Dock Street is a small artisanal brewery that finds its home in a magnificent historic firehouse on the corner of 50th and Baltimore Ave., in a progressive, eclectic and counter-culture neighborhood that reflects Dock Street's philosophy.  Dock Street has a rich brewing history, a reputation for exceptional quality, innovation and brewing distinctive beers.  Dock Street continues to experiment and push the boundaries of the movement it helped build."], ["website", "http://www.dockstreetbeer.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Guinness"], ["established", 1759], ["description", "St. James's Gate Brewery (Irish: Grúdlann Gheata Shan Séamuis) is a brewery founded in 1759 in Dublin, Ireland by Arthur Guinness. The company is now a part of Diageo, a company formed via the merger of Guinness  and Grand Metropolitan in 1997. The main product produced at the brewery is Guinness Draft.\n\nLeased for 9,000 years in 1759 by Arthur Guinness at £45 per year, St. James's Gate has been the home of Guinness ever since. It became the largest brewery in Ireland in 1838, and was the largest in the world in 1914, covering 64 acres. Although no longer the largest brewery in the world, it is still the largest brewer of stout in the world. During the 19th and early 20th centuries, the brewery owned most of the buildings in the surrounding area, including many streets of housing for brewery employees, and offices associated with the brewery. The brewery also made all of its own power using its own power plant.\n\nThere is an attached exhibition on the 250-year-old history of Guinness, called the Guinness Storehouse."], ["website", "http://www.guinness.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Create (0.6ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "website", "description", "established", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Guinness"], ["website", "http://www.guinness.com/"], ["description", "St. James's Gate Brewery (Irish: Grúdlann Gheata Shan Séamuis) is a brewery founded in 1759 in Dublin, Ireland by Arthur Guinness. The company is now a part of Diageo, a company formed via the merger of Guinness  and Grand Metropolitan in 1997. The main product produced at the brewery is Guinness Draft.\n\nLeased for 9,000 years in 1759 by Arthur Guinness at £45 per year, St. James's Gate has been the home of Guinness ever since. It became the largest brewery in Ireland in 1838, and was the largest in the world in 1914, covering 64 acres. Although no longer the largest brewery in the world, it is still the largest brewer of stout in the world. During the 19th and early 20th centuries, the brewery owned most of the buildings in the surrounding area, including many streets of housing for brewery employees, and offices associated with the brewery. The brewery also made all of its own power using its own power plant.\n\nThere is an attached exhibition on the 250-year-old history of Guinness, called the Guinness Storehouse."], ["established", 1759], ["created_at", "2019-05-06 19:09:57.846469"], ["updated_at", "2019-05-06 19:09:57.846469"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Harmon Brewing Company"], ["established", 0], ["description", "This 15 barrel microbrewery and restaurant is a perfect place for large groups and families to gather. Located in the Tacoma's downtown University and Museum District - it's a favorite place for locals and tourists alike. The comfortable and coziness of the historic building, decorated to look and feel like a mountain lodge, features a fabulous sampling of northwest food, and of course you will always find Harmon's 5 flagship ales, along with several seasonal ales, on draught for you to enjoy."], ["website", "http://harmonbrewingco.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Create (0.5ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "website", "description", "established", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Harmon Brewing Company"], ["website", "http://harmonbrewingco.com/"], ["description", "This 15 barrel microbrewery and restaurant is a perfect place for large groups and families to gather. Located in the Tacoma's downtown University and Museum District - it's a favorite place for locals and tourists alike. The comfortable and coziness of the historic building, decorated to look and feel like a mountain lodge, features a fabulous sampling of northwest food, and of course you will always find Harmon's 5 flagship ales, along with several seasonal ales, on draught for you to enjoy."], ["established", 0], ["created_at", "2019-05-06 19:09:57.851781"], ["updated_at", "2019-05-06 19:09:57.851781"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Jackalope Brewing Company"], ["established", 2011], ["description", "Jackalope Brewing Company is owned by Bailey Spaulding and Robyn Virball, two young ingénues with an affection for beer. They met in September 2002 in the tiny Scottish village of St. Andrews, Scotland. Bailey was a Harvard student doing a semester abroad and Robyn was beginning undergrad at St. Andrews. They bonded over being put into the worst dorm for overseas orientation and teaching Danish people how to play beer pong. Though after three months Bailey went back to Cambridge, you can't break the bonds that are made when teaching Europeans drinking games and a true friendship was born. During the next eight years, they both graduated, Bailey went off to Vanderbilt Law School, and Robyn entered the working world, but both thought they were meant for much bigger and more alcoholic things."], ["website", "http://www.jackalopebrew.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "website", "description", "established", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Jackalope Brewing Company"], ["website", "http://www.jackalopebrew.com/"], ["description", "Jackalope Brewing Company is owned by Bailey Spaulding and Robyn Virball, two young ingénues with an affection for beer. They met in September 2002 in the tiny Scottish village of St. Andrews, Scotland. Bailey was a Harvard student doing a semester abroad and Robyn was beginning undergrad at St. Andrews. They bonded over being put into the worst dorm for overseas orientation and teaching Danish people how to play beer pong. Though after three months Bailey went back to Cambridge, you can't break the bonds that are made when teaching Europeans drinking games and a true friendship was born. During the next eight years, they both graduated, Bailey went off to Vanderbilt Law School, and Robyn entered the working world, but both thought they were meant for much bigger and more alcoholic things."], ["established", 2011], ["created_at", "2019-05-06 19:09:57.857054"], ["updated_at", "2019-05-06 19:09:57.857054"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Lagunitas Brewing Company"], ["established", 1993], ["description", "From our earliest days of striving to make consistently good beer, and instead making beer that ranged from vile, to barely drinkable, to wonderful, to elegant, to questionable-at-best. From being castigated by our West Marin neighbors to finally suffering an 'eviction' by our West Marin septic system. From landing in the welcoming arms of Petaluma, and actually getting our beer into bottles, onto the streets, and into the hands of sympathatic beer geeks, to steadily losing less money each month. From all this and more, Lagunitas Brewing Company is emerging as a battle-tested brewery capable of making great beer out of goat's milk, brambles, and asphalt on the surface of the Moon, if need be.\n\nAs the poet once said, 'Where, but for the grace of God and the kindness of strangers, go I'. Where go we indeed, whatever that means."], ["website", "http://www.lagunitas.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Last Name Brewing"], ["established", 2003], ["description", "Last Name Brewing is a craft brewery and tap room in Upland, CA. We brew the kind of beer we like to drink. Beer that’s smooth, balanced and that pairs up well with food. Turns out other people like to drink it, too. Sometimes, they even like it enough to give it a gold medal (or two.) We’re not brewing beer to put trophies on our mantels, but it’s nice to be appreciated."], ["website", "http://www.lastnamebrewing.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Create (0.6ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "website", "description", "established", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Last Name Brewing"], ["website", "http://www.lastnamebrewing.com/"], ["description", "Last Name Brewing is a craft brewery and tap room in Upland, CA. We brew the kind of beer we like to drink. Beer that’s smooth, balanced and that pairs up well with food. Turns out other people like to drink it, too. Sometimes, they even like it enough to give it a gold medal (or two.) We’re not brewing beer to put trophies on our mantels, but it’s nice to be appreciated."], ["established", 2003], ["created_at", "2019-05-06 19:09:57.865773"], ["updated_at", "2019-05-06 19:09:57.865773"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Laughing Dog Brewing"], ["established", 2005], ["description", "At Laughing Dog Brewing, what began with a dream for brews with more hops has turned into an insatiable desire to craft beers of all flavors, with a focus on quality, purity, and fun. Today, Laughing Dog brews has brewed over 15 distinct beers, including seasonals like our Huckleberry Ale and Winter Ale, and our award-winning IPA's and Stouts. But despite our success and growth, our motto remains the same as the day we started, to create... \"Fetchingly Good Beer\"!"], ["website", "http://www.laughingdogbrewing.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" IS NULL AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Miller Brewing Company"], ["established", 1885], ["website", "http://www.millercoors.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "website", "established", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Miller Brewing Company"], ["website", "http://www.millercoors.com/"], ["established", 1885], ["created_at", "2019-05-06 19:09:57.873160"], ["updated_at", "2019-05-06 19:09:57.873160"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "New Holland Brewing Company"], ["established", 1996], ["description", "New Holland Brewing Company’s deep roots in the craft industry go back to 1997. Our role as an integral member of the artisan approach is something we take seriously, yet engage lightheartedly.\n\nWe believe the art of craft lives in fostering rich experiences for our customers, through creating authentic beer, spirits and food while providing great service. Recognized for our creativity and artistry, our mission to improve the lives of craft consumers everywhere is seen in our diverse, balanced collection of beer and spirits."], ["website", "http://newhollandbrew.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Oskar Blues Brewery"], ["established", 1997], ["description", "Oskar Blues Brewery is part of the Oskar Blues Grill and Brew restaurant and was located in Lyons, Colorado, near the city of Boulder. The brewery is now in Longmont, CO - a much larger town just east of Lyons. Oskar Blues is unique in that it serves craft-brewed beer in cans, contrary to the normal practice of bottling micro brews. The brewery is owned by Dale Katechis, a native of Florence, Alabama who brought canned beer and southern fried foods together for an interesting twist on the micro-brew pub."], ["website", "http://www.oskarblues.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Portsmouth Brewery"], ["established", 1991], ["description", "The Portsmouth Brewery, New Hampshire's first brewpub, was founded in 1991, four years after its sister company, the Northampton Brewery, opened in Western Massachusetts. Peter Egelston, Head Brewer in Northampton from 1987 until 1991, moved to Portsmouth to set up the new brewery here. (Egelston is now the sole proprietor of the Brewery.) \n\nThe brewing system consists of a custom made seven-barrel (210 gallons) JV Northwest brewhouse, two fourteen-barrel and three seven-barrel JV Northwest unitank (cylindroconical) fermenters, two fourteen-barrel horizontal fermenters (added later, in 1994), and twelve seven-barrel grundy cellar tanks. Originally, the Portsmouth Brewery opened with beer recipes from Northampton - Pale Ale, Old Brown Dog, Weizenheimer, Black Cat Stout, Blonde Ale, Golden and Amber Lagers - and these still comprise the core of the Brewery's full-time beers today. However, over the years, successive brewers have contributed many outstanding seasonal and specialty beers to the list.  All of the beers served at the Portsmouth Brewery are brewed right here on premise, with the exception of those beers, such as Shoals Pale Ale and Portsmouth Lager, brewed at Smuttynose Brewing Company, our sister company."], ["website", "http://www.portsmouthbrewery.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "website", "description", "established", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Portsmouth Brewery"], ["website", "http://www.portsmouthbrewery.com/"], ["description", "The Portsmouth Brewery, New Hampshire's first brewpub, was founded in 1991, four years after its sister company, the Northampton Brewery, opened in Western Massachusetts. Peter Egelston, Head Brewer in Northampton from 1987 until 1991, moved to Portsmouth to set up the new brewery here. (Egelston is now the sole proprietor of the Brewery.) \n\nThe brewing system consists of a custom made seven-barrel (210 gallons) JV Northwest brewhouse, two fourteen-barrel and three seven-barrel JV Northwest unitank (cylindroconical) fermenters, two fourteen-barrel horizontal fermenters (added later, in 1994), and twelve seven-barrel grundy cellar tanks. Originally, the Portsmouth Brewery opened with beer recipes from Northampton - Pale Ale, Old Brown Dog, Weizenheimer, Black Cat Stout, Blonde Ale, Golden and Amber Lagers - and these still comprise the core of the Brewery's full-time beers today. However, over the years, successive brewers have contributed many outstanding seasonal and specialty beers to the list.  All of the beers served at the Portsmouth Brewery are brewed right here on premise, with the exception of those beers, such as Shoals Pale Ale and Portsmouth Lager, brewed at Smuttynose Brewing Company, our sister company."], ["established", 1991], ["created_at", "2019-05-06 19:09:57.880733"], ["updated_at", "2019-05-06 19:09:57.880733"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Sierra Nevada Brewing Company"], ["established", 1980], ["description", "The Sierra Nevada Brewing Company was established in 1980 by homebrewers Ken Grossman and Paul Camusi. Camusi retired in 1998 and sold his share in the company to Grossman.\n\nLocated in Chico, California, Sierra Nevada Brewing is one of the most popular craft breweries currently operating in the United States. Its Pale Ale is world renowned, and the brewery produces almost 700,000 barrels of beer per year. Sierra Nevada's Pale Ale is the second best-selling craft beer in the United States, behind the Boston Beer Company's Samuel Adams Boston Lager.\n\nSierra Nevada's specialty brews include the winter seasonal Celebration, which is similar to the pale ale, but hoppier; and Summerfest, a lager which is citrusy and sunny."], ["website", "http://www.sierranevada.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Create (0.3ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "website", "description", "established", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sierra Nevada Brewing Company"], ["website", "http://www.sierranevada.com/"], ["description", "The Sierra Nevada Brewing Company was established in 1980 by homebrewers Ken Grossman and Paul Camusi. Camusi retired in 1998 and sold his share in the company to Grossman.\n\nLocated in Chico, California, Sierra Nevada Brewing is one of the most popular craft breweries currently operating in the United States. Its Pale Ale is world renowned, and the brewery produces almost 700,000 barrels of beer per year. Sierra Nevada's Pale Ale is the second best-selling craft beer in the United States, behind the Boston Beer Company's Samuel Adams Boston Lager.\n\nSierra Nevada's specialty brews include the winter seasonal Celebration, which is similar to the pale ale, but hoppier; and Summerfest, a lager which is citrusy and sunny."], ["established", 1980], ["created_at", "2019-05-06 19:09:57.885594"], ["updated_at", "2019-05-06 19:09:57.885594"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "SweetWater Brewing Company"], ["established", 1997], ["description", "February 17, 1997 marked the official beginning of SweetWater Brewery, and a new style of brewing and selling beer in Atlanta as the boys wandered around Atlanta in an old van with Freddy's dog Badger. After ending up on the wrong side of the tracks a few times, they were finally pointed in the direction of Virginia-Highlands and found a few bars willing to take a chance on them. \"We'll give you a shot as long as your dog stops begging for leftovers on our patio\" was the cautious approval they needed to get the brand rolling.\n\nSweetWater's second and current location is in Midtown Atlanta, adjacent to Ansley Park, in the Armour Circle Industrial Park just off of Piedmont and Monroe. The boys saved all of their pennies to buy the 25,000 square feet of brewing goodness and smack in the middle of all the action. Since the company began we've wanted to be closer to our homes, the bars and stores that sell our beer, and all the good folks that drink it. Fortunately seven years of great growth gave the company that opportunity. We learned a lot from that location and left all those mistakes behind as we built our new home. SweetWater Brewing Company has been here since 2004 and it feels good to be settled in. Our new home has enough capacity to brew 100,000 barrels of beer a year (A few more years at this rate.)"], ["website", "http://www.sweetwaterbrew.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Wachusett Brewing Company"], ["established", 1994], ["description", "Wachusett Brewing Company was founded in 1994 by 3 Massachusetts college buddies who developed a significant appreciation for craft beer during their adventures of biking, canoeing and hiking around New England.  Armed with a “we can do this” attitude, the three cast off from their careers in engineering and biology to pursue their passion to make great beer.\n\nToday, Wachusett has grown to become one of the largest breweries in Northeast with a diverse and award-winning portfolio of ales and lagers that are still made with the same “we can do this” attitude that started the brewery over 20 years ago.\n\nCome visit us at The Brew Yard located at our brewery in Westminster MA to learn more about our story and sample our wide variety of beers.   We hope to see you soon!"], ["website", "http://www.wachusettbrew.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Create (0.5ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "website", "description", "established", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Wachusett Brewing Company"], ["website", "http://www.wachusettbrew.com/"], ["description", "Wachusett Brewing Company was founded in 1994 by 3 Massachusetts college buddies who developed a significant appreciation for craft beer during their adventures of biking, canoeing and hiking around New England.  Armed with a “we can do this” attitude, the three cast off from their careers in engineering and biology to pursue their passion to make great beer.\n\nToday, Wachusett has grown to become one of the largest breweries in Northeast with a diverse and award-winning portfolio of ales and lagers that are still made with the same “we can do this” attitude that started the brewery over 20 years ago.\n\nCome visit us at The Brew Yard located at our brewery in Westminster MA to learn more about our story and sample our wide variety of beers.   We hope to see you soon!"], ["established", 1994], ["created_at", "2019-05-06 19:09:57.897647"], ["updated_at", "2019-05-06 19:09:57.897647"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Zero Gravity Craft Brewery"], ["established", 2004], ["description", "Superior craft beer out of Burlington, Vermont since 2004. Visit us at our original brewpub location located at American Flatbread, or our more recent brewery and tasting room located in Burlington's South End Arts District."], ["website", "http://www.zerogravitybeer.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."abv" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Breckenridge Christmas Ale"], ["abv", 7.4], ["style", "American Strong Pale"], ["brewery_id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Anheuser-Busch InBev"], ["established", 1852], ["description", "Anheuser-Busch operates 12 breweries in the United States, 14 in China and one in the United Kingdom. Anheuser-Busch's operations and resources are focused on adding to life's enjoyment not only through the responsible consumption of beer by adults, but through theme park entertainment and packaging.  In the United States, the company holds a 48.5 percent share of U.S. beer sales. Worldwide, Anheuser-Busch's beer sales volume was 128.4 million barrels in 2007.  The St. Louis-based company's subsidiaries include one of the largest U.S. manufacturers of aluminum beverage containers and one of the world's largest recyclers of aluminum beverage cans. Anheuser-Busch also has interests in malt production, rice milling, real estate development, turf farming, metalized and paper label printing, bottle production and transportation services."], ["website", "http://www.anheuser-busch.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" IS NULL AND "breweries"."website" IS NULL LIMIT ?[0m  [["name", "Boston Beer Company (Samuel Adams)"], ["established", 0], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Breckenridge Brewery"], ["established", 1990], ["description", "Breckenridge Brewery was founded in 1990 in Breckenridge, Colorado. In the past two plus decades Breckenridge Brewery has grown from a small 3,000-barrels-a-year brewpub to one of the most successful craft beer and restaurant companies in the nation. It now handcrafts more than 70,000 barrels of fresh beer annually and owns and operates five brewpubs and ale houses in the state of Colorado. For more information visit www.breckbrew.com."], ["website", "http://www.breckbrew.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Brouwerij De Leite"], ["established", 2008], ["description", "Brewing since 1997.  Officially transformed in 'brewery De Leite in 2008.  started with a brewingkettle of 8,5 HL.  now ( 2011) expanding to a brewing kettle of 60 HL.  Only brewing once a month."], ["website", "http://www.deleite.be/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Dock Street Brewery"], ["established", 1985], ["description", "Founded in 1985, Dock Street Brewing Co. was the first microbrewery in Philadelphia and one of the first in the country.  Today, Dock Street is a small artisanal brewery that finds its home in a magnificent historic firehouse on the corner of 50th and Baltimore Ave., in a progressive, eclectic and counter-culture neighborhood that reflects Dock Street's philosophy.  Dock Street has a rich brewing history, a reputation for exceptional quality, innovation and brewing distinctive beers.  Dock Street continues to experiment and push the boundaries of the movement it helped build."], ["website", "http://www.dockstreetbeer.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Guinness"], ["established", 1759], ["description", "St. James's Gate Brewery (Irish: Grúdlann Gheata Shan Séamuis) is a brewery founded in 1759 in Dublin, Ireland by Arthur Guinness. The company is now a part of Diageo, a company formed via the merger of Guinness  and Grand Metropolitan in 1997. The main product produced at the brewery is Guinness Draft.\n\nLeased for 9,000 years in 1759 by Arthur Guinness at £45 per year, St. James's Gate has been the home of Guinness ever since. It became the largest brewery in Ireland in 1838, and was the largest in the world in 1914, covering 64 acres. Although no longer the largest brewery in the world, it is still the largest brewer of stout in the world. During the 19th and early 20th centuries, the brewery owned most of the buildings in the surrounding area, including many streets of housing for brewery employees, and offices associated with the brewery. The brewery also made all of its own power using its own power plant.\n\nThere is an attached exhibition on the 250-year-old history of Guinness, called the Guinness Storehouse."], ["website", "http://www.guinness.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Harmon Brewing Company"], ["established", 0], ["description", "This 15 barrel microbrewery and restaurant is a perfect place for large groups and families to gather. Located in the Tacoma's downtown University and Museum District - it's a favorite place for locals and tourists alike. The comfortable and coziness of the historic building, decorated to look and feel like a mountain lodge, features a fabulous sampling of northwest food, and of course you will always find Harmon's 5 flagship ales, along with several seasonal ales, on draught for you to enjoy."], ["website", "http://harmonbrewingco.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Jackalope Brewing Company"], ["established", 2011], ["description", "Jackalope Brewing Company is owned by Bailey Spaulding and Robyn Virball, two young ingénues with an affection for beer. They met in September 2002 in the tiny Scottish village of St. Andrews, Scotland. Bailey was a Harvard student doing a semester abroad and Robyn was beginning undergrad at St. Andrews. They bonded over being put into the worst dorm for overseas orientation and teaching Danish people how to play beer pong. Though after three months Bailey went back to Cambridge, you can't break the bonds that are made when teaching Europeans drinking games and a true friendship was born. During the next eight years, they both graduated, Bailey went off to Vanderbilt Law School, and Robyn entered the working world, but both thought they were meant for much bigger and more alcoholic things."], ["website", "http://www.jackalopebrew.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Lagunitas Brewing Company"], ["established", 1993], ["description", "From our earliest days of striving to make consistently good beer, and instead making beer that ranged from vile, to barely drinkable, to wonderful, to elegant, to questionable-at-best. From being castigated by our West Marin neighbors to finally suffering an 'eviction' by our West Marin septic system. From landing in the welcoming arms of Petaluma, and actually getting our beer into bottles, onto the streets, and into the hands of sympathatic beer geeks, to steadily losing less money each month. From all this and more, Lagunitas Brewing Company is emerging as a battle-tested brewery capable of making great beer out of goat's milk, brambles, and asphalt on the surface of the Moon, if need be.\n\nAs the poet once said, 'Where, but for the grace of God and the kindness of strangers, go I'. Where go we indeed, whatever that means."], ["website", "http://www.lagunitas.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Last Name Brewing"], ["established", 2003], ["description", "Last Name Brewing is a craft brewery and tap room in Upland, CA. We brew the kind of beer we like to drink. Beer that’s smooth, balanced and that pairs up well with food. Turns out other people like to drink it, too. Sometimes, they even like it enough to give it a gold medal (or two.) We’re not brewing beer to put trophies on our mantels, but it’s nice to be appreciated."], ["website", "http://www.lastnamebrewing.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Laughing Dog Brewing"], ["established", 2005], ["description", "At Laughing Dog Brewing, what began with a dream for brews with more hops has turned into an insatiable desire to craft beers of all flavors, with a focus on quality, purity, and fun. Today, Laughing Dog brews has brewed over 15 distinct beers, including seasonals like our Huckleberry Ale and Winter Ale, and our award-winning IPA's and Stouts. But despite our success and growth, our motto remains the same as the day we started, to create... \"Fetchingly Good Beer\"!"], ["website", "http://www.laughingdogbrewing.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" IS NULL AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Miller Brewing Company"], ["established", 1885], ["website", "http://www.millercoors.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "New Holland Brewing Company"], ["established", 1996], ["description", "New Holland Brewing Company’s deep roots in the craft industry go back to 1997. Our role as an integral member of the artisan approach is something we take seriously, yet engage lightheartedly.\n\nWe believe the art of craft lives in fostering rich experiences for our customers, through creating authentic beer, spirits and food while providing great service. Recognized for our creativity and artistry, our mission to improve the lives of craft consumers everywhere is seen in our diverse, balanced collection of beer and spirits."], ["website", "http://newhollandbrew.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Oskar Blues Brewery"], ["established", 1997], ["description", "Oskar Blues Brewery is part of the Oskar Blues Grill and Brew restaurant and was located in Lyons, Colorado, near the city of Boulder. The brewery is now in Longmont, CO - a much larger town just east of Lyons. Oskar Blues is unique in that it serves craft-brewed beer in cans, contrary to the normal practice of bottling micro brews. The brewery is owned by Dale Katechis, a native of Florence, Alabama who brought canned beer and southern fried foods together for an interesting twist on the micro-brew pub."], ["website", "http://www.oskarblues.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Portsmouth Brewery"], ["established", 1991], ["description", "The Portsmouth Brewery, New Hampshire's first brewpub, was founded in 1991, four years after its sister company, the Northampton Brewery, opened in Western Massachusetts. Peter Egelston, Head Brewer in Northampton from 1987 until 1991, moved to Portsmouth to set up the new brewery here. (Egelston is now the sole proprietor of the Brewery.) \n\nThe brewing system consists of a custom made seven-barrel (210 gallons) JV Northwest brewhouse, two fourteen-barrel and three seven-barrel JV Northwest unitank (cylindroconical) fermenters, two fourteen-barrel horizontal fermenters (added later, in 1994), and twelve seven-barrel grundy cellar tanks. Originally, the Portsmouth Brewery opened with beer recipes from Northampton - Pale Ale, Old Brown Dog, Weizenheimer, Black Cat Stout, Blonde Ale, Golden and Amber Lagers - and these still comprise the core of the Brewery's full-time beers today. However, over the years, successive brewers have contributed many outstanding seasonal and specialty beers to the list.  All of the beers served at the Portsmouth Brewery are brewed right here on premise, with the exception of those beers, such as Shoals Pale Ale and Portsmouth Lager, brewed at Smuttynose Brewing Company, our sister company."], ["website", "http://www.portsmouthbrewery.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Sierra Nevada Brewing Company"], ["established", 1980], ["description", "The Sierra Nevada Brewing Company was established in 1980 by homebrewers Ken Grossman and Paul Camusi. Camusi retired in 1998 and sold his share in the company to Grossman.\n\nLocated in Chico, California, Sierra Nevada Brewing is one of the most popular craft breweries currently operating in the United States. Its Pale Ale is world renowned, and the brewery produces almost 700,000 barrels of beer per year. Sierra Nevada's Pale Ale is the second best-selling craft beer in the United States, behind the Boston Beer Company's Samuel Adams Boston Lager.\n\nSierra Nevada's specialty brews include the winter seasonal Celebration, which is similar to the pale ale, but hoppier; and Summerfest, a lager which is citrusy and sunny."], ["website", "http://www.sierranevada.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "SweetWater Brewing Company"], ["established", 1997], ["description", "February 17, 1997 marked the official beginning of SweetWater Brewery, and a new style of brewing and selling beer in Atlanta as the boys wandered around Atlanta in an old van with Freddy's dog Badger. After ending up on the wrong side of the tracks a few times, they were finally pointed in the direction of Virginia-Highlands and found a few bars willing to take a chance on them. \"We'll give you a shot as long as your dog stops begging for leftovers on our patio\" was the cautious approval they needed to get the brand rolling.\n\nSweetWater's second and current location is in Midtown Atlanta, adjacent to Ansley Park, in the Armour Circle Industrial Park just off of Piedmont and Monroe. The boys saved all of their pennies to buy the 25,000 square feet of brewing goodness and smack in the middle of all the action. Since the company began we've wanted to be closer to our homes, the bars and stores that sell our beer, and all the good folks that drink it. Fortunately seven years of great growth gave the company that opportunity. We learned a lot from that location and left all those mistakes behind as we built our new home. SweetWater Brewing Company has been here since 2004 and it feels good to be settled in. Our new home has enough capacity to brew 100,000 barrels of beer a year (A few more years at this rate.)"], ["website", "http://www.sweetwaterbrew.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Wachusett Brewing Company"], ["established", 1994], ["description", "Wachusett Brewing Company was founded in 1994 by 3 Massachusetts college buddies who developed a significant appreciation for craft beer during their adventures of biking, canoeing and hiking around New England.  Armed with a “we can do this” attitude, the three cast off from their careers in engineering and biology to pursue their passion to make great beer.\n\nToday, Wachusett has grown to become one of the largest breweries in Northeast with a diverse and award-winning portfolio of ales and lagers that are still made with the same “we can do this” attitude that started the brewery over 20 years ago.\n\nCome visit us at The Brew Yard located at our brewery in Westminster MA to learn more about our story and sample our wide variety of beers.   We hope to see you soon!"], ["website", "http://www.wachusettbrew.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Zero Gravity Craft Brewery"], ["established", 2004], ["description", "Superior craft beer out of Burlington, Vermont since 2004. Visit us at our original brewpub location located at American Flatbread, or our more recent brewery and tasting room located in Burlington's South End Arts District."], ["website", "http://www.zerogravitybeer.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBeer Load (0.5ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."abv" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Breckenridge Christmas Ale"], ["abv", 7.4], ["style", "American Strong Pale"], ["brewery_id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Anheuser-Busch InBev"], ["established", 1852], ["description", "Anheuser-Busch operates 12 breweries in the United States, 14 in China and one in the United Kingdom. Anheuser-Busch's operations and resources are focused on adding to life's enjoyment not only through the responsible consumption of beer by adults, but through theme park entertainment and packaging.  In the United States, the company holds a 48.5 percent share of U.S. beer sales. Worldwide, Anheuser-Busch's beer sales volume was 128.4 million barrels in 2007.  The St. Louis-based company's subsidiaries include one of the largest U.S. manufacturers of aluminum beverage containers and one of the world's largest recyclers of aluminum beverage cans. Anheuser-Busch also has interests in malt production, rice milling, real estate development, turf farming, metalized and paper label printing, bottle production and transportation services."], ["website", "http://www.anheuser-busch.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Create (1.8ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "website", "description", "established", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Anheuser-Busch InBev"], ["website", "http://www.anheuser-busch.com/"], ["description", "Anheuser-Busch operates 12 breweries in the United States, 14 in China and one in the United Kingdom. Anheuser-Busch's operations and resources are focused on adding to life's enjoyment not only through the responsible consumption of beer by adults, but through theme park entertainment and packaging.  In the United States, the company holds a 48.5 percent share of U.S. beer sales. Worldwide, Anheuser-Busch's beer sales volume was 128.4 million barrels in 2007.  The St. Louis-based company's subsidiaries include one of the largest U.S. manufacturers of aluminum beverage containers and one of the world's largest recyclers of aluminum beverage cans. Anheuser-Busch also has interests in malt production, rice milling, real estate development, turf farming, metalized and paper label printing, bottle production and transportation services."], ["established", 1852], ["created_at", "2019-05-06 19:18:31.621406"], ["updated_at", "2019-05-06 19:18:31.621406"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" IS NULL AND "breweries"."website" IS NULL LIMIT ?[0m  [["name", "Boston Beer Company (Samuel Adams)"], ["established", 0], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Create (0.5ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "established", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Boston Beer Company (Samuel Adams)"], ["established", 0], ["created_at", "2019-05-06 19:18:31.628312"], ["updated_at", "2019-05-06 19:18:31.628312"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Breckenridge Brewery"], ["established", 1990], ["description", "Breckenridge Brewery was founded in 1990 in Breckenridge, Colorado. In the past two plus decades Breckenridge Brewery has grown from a small 3,000-barrels-a-year brewpub to one of the most successful craft beer and restaurant companies in the nation. It now handcrafts more than 70,000 barrels of fresh beer annually and owns and operates five brewpubs and ale houses in the state of Colorado. For more information visit www.breckbrew.com."], ["website", "http://www.breckbrew.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Brouwerij De Leite"], ["established", 2008], ["description", "Brewing since 1997.  Officially transformed in 'brewery De Leite in 2008.  started with a brewingkettle of 8,5 HL.  now ( 2011) expanding to a brewing kettle of 60 HL.  Only brewing once a month."], ["website", "http://www.deleite.be/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Create (0.5ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "website", "description", "established", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Brouwerij De Leite"], ["website", "http://www.deleite.be/"], ["description", "Brewing since 1997.  Officially transformed in 'brewery De Leite in 2008.  started with a brewingkettle of 8,5 HL.  now ( 2011) expanding to a brewing kettle of 60 HL.  Only brewing once a month."], ["established", 2008], ["created_at", "2019-05-06 19:18:31.637380"], ["updated_at", "2019-05-06 19:18:31.637380"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.4ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Dock Street Brewery"], ["established", 1985], ["description", "Founded in 1985, Dock Street Brewing Co. was the first microbrewery in Philadelphia and one of the first in the country.  Today, Dock Street is a small artisanal brewery that finds its home in a magnificent historic firehouse on the corner of 50th and Baltimore Ave., in a progressive, eclectic and counter-culture neighborhood that reflects Dock Street's philosophy.  Dock Street has a rich brewing history, a reputation for exceptional quality, innovation and brewing distinctive beers.  Dock Street continues to experiment and push the boundaries of the movement it helped build."], ["website", "http://www.dockstreetbeer.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Guinness"], ["established", 1759], ["description", "St. James's Gate Brewery (Irish: Grúdlann Gheata Shan Séamuis) is a brewery founded in 1759 in Dublin, Ireland by Arthur Guinness. The company is now a part of Diageo, a company formed via the merger of Guinness  and Grand Metropolitan in 1997. The main product produced at the brewery is Guinness Draft.\n\nLeased for 9,000 years in 1759 by Arthur Guinness at £45 per year, St. James's Gate has been the home of Guinness ever since. It became the largest brewery in Ireland in 1838, and was the largest in the world in 1914, covering 64 acres. Although no longer the largest brewery in the world, it is still the largest brewer of stout in the world. During the 19th and early 20th centuries, the brewery owned most of the buildings in the surrounding area, including many streets of housing for brewery employees, and offices associated with the brewery. The brewery also made all of its own power using its own power plant.\n\nThere is an attached exhibition on the 250-year-old history of Guinness, called the Guinness Storehouse."], ["website", "http://www.guinness.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Create (0.5ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "website", "description", "established", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Guinness"], ["website", "http://www.guinness.com/"], ["description", "St. James's Gate Brewery (Irish: Grúdlann Gheata Shan Séamuis) is a brewery founded in 1759 in Dublin, Ireland by Arthur Guinness. The company is now a part of Diageo, a company formed via the merger of Guinness  and Grand Metropolitan in 1997. The main product produced at the brewery is Guinness Draft.\n\nLeased for 9,000 years in 1759 by Arthur Guinness at £45 per year, St. James's Gate has been the home of Guinness ever since. It became the largest brewery in Ireland in 1838, and was the largest in the world in 1914, covering 64 acres. Although no longer the largest brewery in the world, it is still the largest brewer of stout in the world. During the 19th and early 20th centuries, the brewery owned most of the buildings in the surrounding area, including many streets of housing for brewery employees, and offices associated with the brewery. The brewery also made all of its own power using its own power plant.\n\nThere is an attached exhibition on the 250-year-old history of Guinness, called the Guinness Storehouse."], ["established", 1759], ["created_at", "2019-05-06 19:18:31.645660"], ["updated_at", "2019-05-06 19:18:31.645660"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Harmon Brewing Company"], ["established", 0], ["description", "This 15 barrel microbrewery and restaurant is a perfect place for large groups and families to gather. Located in the Tacoma's downtown University and Museum District - it's a favorite place for locals and tourists alike. The comfortable and coziness of the historic building, decorated to look and feel like a mountain lodge, features a fabulous sampling of northwest food, and of course you will always find Harmon's 5 flagship ales, along with several seasonal ales, on draught for you to enjoy."], ["website", "http://harmonbrewingco.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Create (0.7ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "website", "description", "established", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Harmon Brewing Company"], ["website", "http://harmonbrewingco.com/"], ["description", "This 15 barrel microbrewery and restaurant is a perfect place for large groups and families to gather. Located in the Tacoma's downtown University and Museum District - it's a favorite place for locals and tourists alike. The comfortable and coziness of the historic building, decorated to look and feel like a mountain lodge, features a fabulous sampling of northwest food, and of course you will always find Harmon's 5 flagship ales, along with several seasonal ales, on draught for you to enjoy."], ["established", 0], ["created_at", "2019-05-06 19:18:31.653968"], ["updated_at", "2019-05-06 19:18:31.653968"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (11.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Jackalope Brewing Company"], ["established", 2011], ["description", "Jackalope Brewing Company is owned by Bailey Spaulding and Robyn Virball, two young ingénues with an affection for beer. They met in September 2002 in the tiny Scottish village of St. Andrews, Scotland. Bailey was a Harvard student doing a semester abroad and Robyn was beginning undergrad at St. Andrews. They bonded over being put into the worst dorm for overseas orientation and teaching Danish people how to play beer pong. Though after three months Bailey went back to Cambridge, you can't break the bonds that are made when teaching Europeans drinking games and a true friendship was born. During the next eight years, they both graduated, Bailey went off to Vanderbilt Law School, and Robyn entered the working world, but both thought they were meant for much bigger and more alcoholic things."], ["website", "http://www.jackalopebrew.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Create (0.5ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "website", "description", "established", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Jackalope Brewing Company"], ["website", "http://www.jackalopebrew.com/"], ["description", "Jackalope Brewing Company is owned by Bailey Spaulding and Robyn Virball, two young ingénues with an affection for beer. They met in September 2002 in the tiny Scottish village of St. Andrews, Scotland. Bailey was a Harvard student doing a semester abroad and Robyn was beginning undergrad at St. Andrews. They bonded over being put into the worst dorm for overseas orientation and teaching Danish people how to play beer pong. Though after three months Bailey went back to Cambridge, you can't break the bonds that are made when teaching Europeans drinking games and a true friendship was born. During the next eight years, they both graduated, Bailey went off to Vanderbilt Law School, and Robyn entered the working world, but both thought they were meant for much bigger and more alcoholic things."], ["established", 2011], ["created_at", "2019-05-06 19:18:31.675248"], ["updated_at", "2019-05-06 19:18:31.675248"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Lagunitas Brewing Company"], ["established", 1993], ["description", "From our earliest days of striving to make consistently good beer, and instead making beer that ranged from vile, to barely drinkable, to wonderful, to elegant, to questionable-at-best. From being castigated by our West Marin neighbors to finally suffering an 'eviction' by our West Marin septic system. From landing in the welcoming arms of Petaluma, and actually getting our beer into bottles, onto the streets, and into the hands of sympathatic beer geeks, to steadily losing less money each month. From all this and more, Lagunitas Brewing Company is emerging as a battle-tested brewery capable of making great beer out of goat's milk, brambles, and asphalt on the surface of the Moon, if need be.\n\nAs the poet once said, 'Where, but for the grace of God and the kindness of strangers, go I'. Where go we indeed, whatever that means."], ["website", "http://www.lagunitas.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Last Name Brewing"], ["established", 2003], ["description", "Last Name Brewing is a craft brewery and tap room in Upland, CA. We brew the kind of beer we like to drink. Beer that’s smooth, balanced and that pairs up well with food. Turns out other people like to drink it, too. Sometimes, they even like it enough to give it a gold medal (or two.) We’re not brewing beer to put trophies on our mantels, but it’s nice to be appreciated."], ["website", "http://www.lastnamebrewing.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "website", "description", "established", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Last Name Brewing"], ["website", "http://www.lastnamebrewing.com/"], ["description", "Last Name Brewing is a craft brewery and tap room in Upland, CA. We brew the kind of beer we like to drink. Beer that’s smooth, balanced and that pairs up well with food. Turns out other people like to drink it, too. Sometimes, they even like it enough to give it a gold medal (or two.) We’re not brewing beer to put trophies on our mantels, but it’s nice to be appreciated."], ["established", 2003], ["created_at", "2019-05-06 19:18:31.680607"], ["updated_at", "2019-05-06 19:18:31.680607"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Laughing Dog Brewing"], ["established", 2005], ["description", "At Laughing Dog Brewing, what began with a dream for brews with more hops has turned into an insatiable desire to craft beers of all flavors, with a focus on quality, purity, and fun. Today, Laughing Dog brews has brewed over 15 distinct beers, including seasonals like our Huckleberry Ale and Winter Ale, and our award-winning IPA's and Stouts. But despite our success and growth, our motto remains the same as the day we started, to create... \"Fetchingly Good Beer\"!"], ["website", "http://www.laughingdogbrewing.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" IS NULL AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Miller Brewing Company"], ["established", 1885], ["website", "http://www.millercoors.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Create (0.5ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "website", "established", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Miller Brewing Company"], ["website", "http://www.millercoors.com/"], ["established", 1885], ["created_at", "2019-05-06 19:18:31.686091"], ["updated_at", "2019-05-06 19:18:31.686091"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "New Holland Brewing Company"], ["established", 1996], ["description", "New Holland Brewing Company’s deep roots in the craft industry go back to 1997. Our role as an integral member of the artisan approach is something we take seriously, yet engage lightheartedly.\n\nWe believe the art of craft lives in fostering rich experiences for our customers, through creating authentic beer, spirits and food while providing great service. Recognized for our creativity and artistry, our mission to improve the lives of craft consumers everywhere is seen in our diverse, balanced collection of beer and spirits."], ["website", "http://newhollandbrew.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Oskar Blues Brewery"], ["established", 1997], ["description", "Oskar Blues Brewery is part of the Oskar Blues Grill and Brew restaurant and was located in Lyons, Colorado, near the city of Boulder. The brewery is now in Longmont, CO - a much larger town just east of Lyons. Oskar Blues is unique in that it serves craft-brewed beer in cans, contrary to the normal practice of bottling micro brews. The brewery is owned by Dale Katechis, a native of Florence, Alabama who brought canned beer and southern fried foods together for an interesting twist on the micro-brew pub."], ["website", "http://www.oskarblues.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Portsmouth Brewery"], ["established", 1991], ["description", "The Portsmouth Brewery, New Hampshire's first brewpub, was founded in 1991, four years after its sister company, the Northampton Brewery, opened in Western Massachusetts. Peter Egelston, Head Brewer in Northampton from 1987 until 1991, moved to Portsmouth to set up the new brewery here. (Egelston is now the sole proprietor of the Brewery.) \n\nThe brewing system consists of a custom made seven-barrel (210 gallons) JV Northwest brewhouse, two fourteen-barrel and three seven-barrel JV Northwest unitank (cylindroconical) fermenters, two fourteen-barrel horizontal fermenters (added later, in 1994), and twelve seven-barrel grundy cellar tanks. Originally, the Portsmouth Brewery opened with beer recipes from Northampton - Pale Ale, Old Brown Dog, Weizenheimer, Black Cat Stout, Blonde Ale, Golden and Amber Lagers - and these still comprise the core of the Brewery's full-time beers today. However, over the years, successive brewers have contributed many outstanding seasonal and specialty beers to the list.  All of the beers served at the Portsmouth Brewery are brewed right here on premise, with the exception of those beers, such as Shoals Pale Ale and Portsmouth Lager, brewed at Smuttynose Brewing Company, our sister company."], ["website", "http://www.portsmouthbrewery.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "website", "description", "established", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Portsmouth Brewery"], ["website", "http://www.portsmouthbrewery.com/"], ["description", "The Portsmouth Brewery, New Hampshire's first brewpub, was founded in 1991, four years after its sister company, the Northampton Brewery, opened in Western Massachusetts. Peter Egelston, Head Brewer in Northampton from 1987 until 1991, moved to Portsmouth to set up the new brewery here. (Egelston is now the sole proprietor of the Brewery.) \n\nThe brewing system consists of a custom made seven-barrel (210 gallons) JV Northwest brewhouse, two fourteen-barrel and three seven-barrel JV Northwest unitank (cylindroconical) fermenters, two fourteen-barrel horizontal fermenters (added later, in 1994), and twelve seven-barrel grundy cellar tanks. Originally, the Portsmouth Brewery opened with beer recipes from Northampton - Pale Ale, Old Brown Dog, Weizenheimer, Black Cat Stout, Blonde Ale, Golden and Amber Lagers - and these still comprise the core of the Brewery's full-time beers today. However, over the years, successive brewers have contributed many outstanding seasonal and specialty beers to the list.  All of the beers served at the Portsmouth Brewery are brewed right here on premise, with the exception of those beers, such as Shoals Pale Ale and Portsmouth Lager, brewed at Smuttynose Brewing Company, our sister company."], ["established", 1991], ["created_at", "2019-05-06 19:18:31.693129"], ["updated_at", "2019-05-06 19:18:31.693129"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Sierra Nevada Brewing Company"], ["established", 1980], ["description", "The Sierra Nevada Brewing Company was established in 1980 by homebrewers Ken Grossman and Paul Camusi. Camusi retired in 1998 and sold his share in the company to Grossman.\n\nLocated in Chico, California, Sierra Nevada Brewing is one of the most popular craft breweries currently operating in the United States. Its Pale Ale is world renowned, and the brewery produces almost 700,000 barrels of beer per year. Sierra Nevada's Pale Ale is the second best-selling craft beer in the United States, behind the Boston Beer Company's Samuel Adams Boston Lager.\n\nSierra Nevada's specialty brews include the winter seasonal Celebration, which is similar to the pale ale, but hoppier; and Summerfest, a lager which is citrusy and sunny."], ["website", "http://www.sierranevada.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "website", "description", "established", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sierra Nevada Brewing Company"], ["website", "http://www.sierranevada.com/"], ["description", "The Sierra Nevada Brewing Company was established in 1980 by homebrewers Ken Grossman and Paul Camusi. Camusi retired in 1998 and sold his share in the company to Grossman.\n\nLocated in Chico, California, Sierra Nevada Brewing is one of the most popular craft breweries currently operating in the United States. Its Pale Ale is world renowned, and the brewery produces almost 700,000 barrels of beer per year. Sierra Nevada's Pale Ale is the second best-selling craft beer in the United States, behind the Boston Beer Company's Samuel Adams Boston Lager.\n\nSierra Nevada's specialty brews include the winter seasonal Celebration, which is similar to the pale ale, but hoppier; and Summerfest, a lager which is citrusy and sunny."], ["established", 1980], ["created_at", "2019-05-06 19:18:31.697909"], ["updated_at", "2019-05-06 19:18:31.697909"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "SweetWater Brewing Company"], ["established", 1997], ["description", "February 17, 1997 marked the official beginning of SweetWater Brewery, and a new style of brewing and selling beer in Atlanta as the boys wandered around Atlanta in an old van with Freddy's dog Badger. After ending up on the wrong side of the tracks a few times, they were finally pointed in the direction of Virginia-Highlands and found a few bars willing to take a chance on them. \"We'll give you a shot as long as your dog stops begging for leftovers on our patio\" was the cautious approval they needed to get the brand rolling.\n\nSweetWater's second and current location is in Midtown Atlanta, adjacent to Ansley Park, in the Armour Circle Industrial Park just off of Piedmont and Monroe. The boys saved all of their pennies to buy the 25,000 square feet of brewing goodness and smack in the middle of all the action. Since the company began we've wanted to be closer to our homes, the bars and stores that sell our beer, and all the good folks that drink it. Fortunately seven years of great growth gave the company that opportunity. We learned a lot from that location and left all those mistakes behind as we built our new home. SweetWater Brewing Company has been here since 2004 and it feels good to be settled in. Our new home has enough capacity to brew 100,000 barrels of beer a year (A few more years at this rate.)"], ["website", "http://www.sweetwaterbrew.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Wachusett Brewing Company"], ["established", 1994], ["description", "Wachusett Brewing Company was founded in 1994 by 3 Massachusetts college buddies who developed a significant appreciation for craft beer during their adventures of biking, canoeing and hiking around New England.  Armed with a “we can do this” attitude, the three cast off from their careers in engineering and biology to pursue their passion to make great beer.\n\nToday, Wachusett has grown to become one of the largest breweries in Northeast with a diverse and award-winning portfolio of ales and lagers that are still made with the same “we can do this” attitude that started the brewery over 20 years ago.\n\nCome visit us at The Brew Yard located at our brewery in Westminster MA to learn more about our story and sample our wide variety of beers.   We hope to see you soon!"], ["website", "http://www.wachusettbrew.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "website", "description", "established", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Wachusett Brewing Company"], ["website", "http://www.wachusettbrew.com/"], ["description", "Wachusett Brewing Company was founded in 1994 by 3 Massachusetts college buddies who developed a significant appreciation for craft beer during their adventures of biking, canoeing and hiking around New England.  Armed with a “we can do this” attitude, the three cast off from their careers in engineering and biology to pursue their passion to make great beer.\n\nToday, Wachusett has grown to become one of the largest breweries in Northeast with a diverse and award-winning portfolio of ales and lagers that are still made with the same “we can do this” attitude that started the brewery over 20 years ago.\n\nCome visit us at The Brew Yard located at our brewery in Westminster MA to learn more about our story and sample our wide variety of beers.   We hope to see you soon!"], ["established", 1994], ["created_at", "2019-05-06 19:18:31.703311"], ["updated_at", "2019-05-06 19:18:31.703311"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."name" = ? AND "breweries"."established" = ? AND "breweries"."description" = ? AND "breweries"."website" = ? LIMIT ?[0m  [["name", "Zero Gravity Craft Brewery"], ["established", 2004], ["description", "Superior craft beer out of Burlington, Vermont since 2004. Visit us at our original brewpub location located at American Flatbread, or our more recent brewery and tasting room located in Burlington's South End Arts District."], ["website", "http://www.zerogravitybeer.com/"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mBeer Load (0.5ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."abv" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Breckenridge Christmas Ale"], ["abv", 7.4], ["style", "American Strong Pale"], ["brewery_id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."abv" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Breckenridge Christmas Ale"], ["abv", 7.4], ["style", "American Strong Pale"], ["brewery_id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddBreweryIdToBeers (20190506192316)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (5214.3ms)[0m  [1m[35mALTER TABLE "beers" ADD "brewery_id" integer[0m
+  ↳ db/migrate/20190506192316_add_brewery_id_to_beers.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddBreweryIdToBeers (20190506192316)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (5220.3ms)[0m  [1m[35mALTER TABLE "beers" ADD "brewery_id" integer[0m
+  ↳ db/migrate/20190506192316_add_brewery_id_to_beers.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddBreweryIdToBeers (20190506192316)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "beers" ADD "brewery_id" integer[0m
+  ↳ db/migrate/20190506192316_add_brewery_id_to_beers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190506192316"]]
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."abv" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Breckenridge Christmas Ale"], ["abv", 7.4], ["style", "American Strong Pale"], ["brewery_id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mattfagan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Breckenridge Christmas Ale"], ["ABV", 7.4], ["style", "American Strong Pale"], ["brewery_id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Breckenridge Christmas Ale"], ["style", "American Strong Pale"], ["ABV", 7.4], ["created_at", "2019-05-06 19:27:24.236997"], ["updated_at", "2019-05-06 19:27:24.236997"], ["brewery_id", 1]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Agave Wheat"], ["ABV", 5.9], ["style", "Wheat Ale"], ["brewery_id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:32
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mBeer Create (0.4ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Agave Wheat"], ["style", "Wheat Ale"], ["ABV", 5.9], ["created_at", "2019-05-06 19:27:24.246887"], ["updated_at", "2019-05-06 19:27:24.246887"], ["brewery_id", 1]]
+  ↳ db/seeds.rb:32
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:32
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Avalanche Ale"], ["ABV", 4.4], ["style", "Amber"], ["brewery_id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Avalanche Ale"], ["style", "Amber"], ["ABV", 4.4], ["created_at", "2019-05-06 19:27:24.335923"], ["updated_at", "2019-05-06 19:27:24.335923"], ["brewery_id", 1]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Regal Pilsner"], ["ABV", 7.0], ["style", "American Pilsener"], ["brewery_id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mBeer Create (0.7ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Regal Pilsner"], ["style", "American Pilsener"], ["ABV", 7.0], ["created_at", "2019-05-06 19:27:24.342416"], ["updated_at", "2019-05-06 19:27:24.342416"], ["brewery_id", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Breck IPA"], ["ABV", 6.3], ["style", "American IPA"], ["brewery_id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:47
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Breck IPA"], ["style", "American IPA"], ["ABV", 6.3], ["created_at", "2019-05-06 19:27:24.350603"], ["updated_at", "2019-05-06 19:27:24.350603"], ["brewery_id", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:47
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Bohemian Dock Street Pilsner"], ["ABV", 5.0], ["style", "German Pilsener"], ["brewery_id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:54
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:54
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:54
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Bohemian Dock Street Pilsner"], ["style", "German Pilsener"], ["ABV", 5.0], ["created_at", "2019-05-06 19:27:24.357799"], ["updated_at", "2019-05-06 19:27:24.357799"], ["brewery_id", 2]]
+  ↳ db/seeds.rb:54
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:54
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Bubbly Wit"], ["ABV", 7.1], ["style", "Belgian Blonde"], ["brewery_id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:59
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Bubbly Wit"], ["style", "Belgian Blonde"], ["ABV", 7.1], ["created_at", "2019-05-06 19:27:24.365914"], ["updated_at", "2019-05-06 19:27:24.365914"], ["brewery_id", 2]]
+  ↳ db/seeds.rb:59
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:59
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Cinnister Stout"], ["ABV", 5.0], ["style", "American Stout"], ["brewery_id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:64
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:64
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:64
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Cinnister Stout"], ["style", "American Stout"], ["ABV", 5.0], ["created_at", "2019-05-06 19:27:24.373089"], ["updated_at", "2019-05-06 19:27:24.373089"], ["brewery_id", 2]]
+  ↳ db/seeds.rb:64
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:64
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Coco Nuts"], ["ABV", 5.0], ["style", "Saison"], ["brewery_id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Coco Nuts"], ["style", "Saison"], ["ABV", 5.0], ["created_at", "2019-05-06 19:27:24.380340"], ["updated_at", "2019-05-06 19:27:24.380340"], ["brewery_id", 2]]
+  ↳ db/seeds.rb:69
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Pimp My Ride"], ["ABV", 7.8], ["style", "Imperial IPA"], ["brewery_id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:74
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:74
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:74
+  [1m[36mBeer Create (0.8ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Pimp My Ride"], ["style", "Imperial IPA"], ["ABV", 7.8], ["created_at", "2019-05-06 19:27:24.387999"], ["updated_at", "2019-05-06 19:27:24.387999"], ["brewery_id", 2]]
+  ↳ db/seeds.rb:74
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:74
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "12th Of Never"], ["ABV", 5.5], ["style", "American Pale"], ["brewery_id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:81
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:81
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:81
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "12th Of Never"], ["style", "American Pale"], ["ABV", 5.5], ["created_at", "2019-05-06 19:27:24.397449"], ["updated_at", "2019-05-06 19:27:24.397449"], ["brewery_id", 3]]
+  ↳ db/seeds.rb:81
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:81
+  [1m[36mBeer Load (0.1ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "A Little Sumpin' Sumpin'"], ["ABV", 7.5], ["style", "American Pale"], ["brewery_id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:86
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:86
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:86
+  [1m[36mBeer Create (2.1ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "A Little Sumpin' Sumpin'"], ["style", "American Pale"], ["ABV", 7.5], ["created_at", "2019-05-06 19:27:24.405490"], ["updated_at", "2019-05-06 19:27:24.405490"], ["brewery_id", 3]]
+  ↳ db/seeds.rb:86
+  [1m[35m (31.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:86
+  [1m[36mBeer Load (0.5ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Aunt Sally"], ["ABV", 5.7], ["style", "Sour"], ["brewery_id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:91
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:91
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:91
+  [1m[36mBeer Create (0.8ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Aunt Sally"], ["style", "Sour"], ["ABV", 5.7], ["created_at", "2019-05-06 19:27:24.450305"], ["updated_at", "2019-05-06 19:27:24.450305"], ["brewery_id", 3]]
+  ↳ db/seeds.rb:91
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:91
+  [1m[36mBeer Load (1.6ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Brown Shugga"], ["ABV", 9.9], ["style", "American Strong Pale"], ["brewery_id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:96
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:96
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:96
+  [1m[36mBeer Create (0.4ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Brown Shugga"], ["style", "American Strong Pale"], ["ABV", 9.9], ["created_at", "2019-05-06 19:27:24.512584"], ["updated_at", "2019-05-06 19:27:24.512584"], ["brewery_id", 3]]
+  ↳ db/seeds.rb:96
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:96
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Bitter Oats"], ["ABV", 10.5], ["style", "Imperial IPA"], ["brewery_id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:101
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:101
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Bitter Oats"], ["style", "Imperial IPA"], ["ABV", 10.5], ["created_at", "2019-05-06 19:27:24.519052"], ["updated_at", "2019-05-06 19:27:24.519052"], ["brewery_id", 3]]
+  ↳ db/seeds.rb:101
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Alpha Dog Imperial IPA"], ["ABV", 8.5], ["style", "Imperial IPA"], ["brewery_id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:108
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:108
+  [1m[36mBeer Create (0.3ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Alpha Dog Imperial IPA"], ["style", "Imperial IPA"], ["ABV", 8.5], ["created_at", "2019-05-06 19:27:24.525088"], ["updated_at", "2019-05-06 19:27:24.525088"], ["brewery_id", 4]]
+  ↳ db/seeds.rb:108
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:108
+  [1m[36mBeer Load (0.1ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Anubis Imperial Coffee Porter"], ["ABV", 8.0], ["style", "Brown Porter"], ["brewery_id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:114
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:114
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:114
+  [1m[36mBeer Create (0.4ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Anubis Imperial Coffee Porter"], ["style", "Brown Porter"], ["ABV", 8.0], ["created_at", "2019-05-06 19:27:24.529258"], ["updated_at", "2019-05-06 19:27:24.529258"], ["brewery_id", 4]]
+  ↳ db/seeds.rb:114
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:114
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "De Achste Hond Peach Sour"], ["ABV", 7.0], ["style", "Sour"], ["brewery_id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:120
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:120
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:120
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "De Achste Hond Peach Sour"], ["style", "Sour"], ["ABV", 7.0], ["created_at", "2019-05-06 19:27:24.536877"], ["updated_at", "2019-05-06 19:27:24.536877"], ["brewery_id", 4]]
+  ↳ db/seeds.rb:120
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:120
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Devil Dog Imperial IPA"], ["ABV", 10.8], ["style", "Imperial IPA"], ["brewery_id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:126
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:126
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Devil Dog Imperial IPA"], ["style", "Imperial IPA"], ["ABV", 10.8], ["created_at", "2019-05-06 19:27:24.543837"], ["updated_at", "2019-05-06 19:27:24.543837"], ["brewery_id", 4]]
+  ↳ db/seeds.rb:126
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:126
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Dogs of Helles"], ["ABV", 4.0], ["style", "Maibock"], ["brewery_id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:132
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mBeer Create (0.8ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dogs of Helles"], ["style", "Maibock"], ["ABV", 4.0], ["created_at", "2019-05-06 19:27:24.557986"], ["updated_at", "2019-05-06 19:27:24.557986"], ["brewery_id", 4]]
+  ↳ db/seeds.rb:132
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:132
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Georgia Brown"], ["ABV", 5.8], ["style", "American Brown"], ["brewery_id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:139
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:139
+  [1m[36mBrewery Load (0.5ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:139
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Georgia Brown"], ["style", "American Brown"], ["ABV", 5.8], ["created_at", "2019-05-06 19:27:24.566078"], ["updated_at", "2019-05-06 19:27:24.566078"], ["brewery_id", 5]]
+  ↳ db/seeds.rb:139
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:139
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Goin' Coastal"], ["ABV", 6.1], ["style", "American IPA"], ["brewery_id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:144
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:144
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:144
+  [1m[36mBeer Create (0.7ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Goin' Coastal"], ["style", "American IPA"], ["ABV", 6.1], ["created_at", "2019-05-06 19:27:24.573479"], ["updated_at", "2019-05-06 19:27:24.573479"], ["brewery_id", 5]]
+  ↳ db/seeds.rb:144
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:144
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Grass Monkey"], ["ABV", 5.4], ["style", "Wheat Ale"], ["brewery_id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:149
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:149
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:149
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Grass Monkey"], ["style", "Wheat Ale"], ["ABV", 5.4], ["created_at", "2019-05-06 19:27:24.580046"], ["updated_at", "2019-05-06 19:27:24.580046"], ["brewery_id", 5]]
+  ↳ db/seeds.rb:149
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:149
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Ground Score"], ["ABV", 7.1], ["style", "American Pale"], ["brewery_id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:154
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:154
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:154
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Ground Score"], ["style", "American Pale"], ["ABV", 7.1], ["created_at", "2019-05-06 19:27:24.593157"], ["updated_at", "2019-05-06 19:27:24.593157"], ["brewery_id", 5]]
+  ↳ db/seeds.rb:154
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:154
+  [1m[36mBeer Load (0.5ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Guide Beer"], ["ABV", 4.0], ["style", "American Pale"], ["brewery_id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:159
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:159
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:159
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Guide Beer"], ["style", "American Pale"], ["ABV", 4.0], ["created_at", "2019-05-06 19:27:24.603669"], ["updated_at", "2019-05-06 19:27:24.603669"], ["brewery_id", 5]]
+  ↳ db/seeds.rb:159
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:159
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Extra Stout"], ["ABV", 5.3], ["style", "Dry Irish Stout"], ["brewery_id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:166
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:166
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:166
+  [1m[36mBeer Create (1.6ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Extra Stout"], ["style", "Dry Irish Stout"], ["ABV", 5.3], ["created_at", "2019-05-06 19:27:24.612348"], ["updated_at", "2019-05-06 19:27:24.612348"], ["brewery_id", 6]]
+  ↳ db/seeds.rb:166
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:166
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Funkytown"], ["ABV", 6.0], ["style", "Wild Beer"], ["brewery_id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:171
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:171
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:171
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Funkytown"], ["style", "Wild Beer"], ["ABV", 6.0], ["created_at", "2019-05-06 19:27:24.622530"], ["updated_at", "2019-05-06 19:27:24.622530"], ["brewery_id", 6]]
+  ↳ db/seeds.rb:171
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:171
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Fuzzworthy"], ["ABV", 5.9], ["style", "American IPA"], ["brewery_id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:176
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:176
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:176
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Fuzzworthy"], ["style", "American IPA"], ["ABV", 5.9], ["created_at", "2019-05-06 19:27:24.631732"], ["updated_at", "2019-05-06 19:27:24.631732"], ["brewery_id", 6]]
+  ↳ db/seeds.rb:176
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:176
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Gr8ful Anniversary Ale"], ["ABV", 5.2], ["style", "Fruit Beer"], ["brewery_id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:181
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:181
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:181
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Gr8ful Anniversary Ale"], ["style", "Fruit Beer"], ["ABV", 5.2], ["created_at", "2019-05-06 19:27:24.640114"], ["updated_at", "2019-05-06 19:27:24.640114"], ["brewery_id", 6]]
+  ↳ db/seeds.rb:181
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:181
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Grand Royal"], ["ABV", 8.3], ["style", "Imperial IPA"], ["brewery_id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:186
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:186
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:186
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Grand Royal"], ["style", "Imperial IPA"], ["ABV", 8.3], ["created_at", "2019-05-06 19:27:24.662206"], ["updated_at", "2019-05-06 19:27:24.662206"], ["brewery_id", 6]]
+  ↳ db/seeds.rb:186
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:186
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Beerhive"], ["ABV", 8.4], ["style", "Belgian Tripel"], ["brewery_id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:193
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:193
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:193
+  [1m[36mBeer Create (0.8ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Beerhive"], ["style", "Belgian Tripel"], ["ABV", 8.4], ["created_at", "2019-05-06 19:27:24.673707"], ["updated_at", "2019-05-06 19:27:24.673707"], ["brewery_id", 7]]
+  ↳ db/seeds.rb:193
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:193
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Black Mad Hatter India Pale Ale"], ["ABV", 5.5], ["style", "Black Ale"], ["brewery_id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:198
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:198
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:198
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Black Mad Hatter India Pale Ale"], ["style", "Black Ale"], ["ABV", 5.5], ["created_at", "2019-05-06 19:27:24.693415"], ["updated_at", "2019-05-06 19:27:24.693415"], ["brewery_id", 7]]
+  ↳ db/seeds.rb:198
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:198
+  [1m[36mBeer Load (0.9ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Dragon’s Milk White"], ["ABV", 6.0], ["style", "Stout"], ["brewery_id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:203
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:203
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:203
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dragon’s Milk White"], ["style", "Stout"], ["ABV", 6.0], ["created_at", "2019-05-06 19:27:24.703181"], ["updated_at", "2019-05-06 19:27:24.703181"], ["brewery_id", 7]]
+  ↳ db/seeds.rb:203
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:203
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Blue Sunday"], ["ABV", 7.0], ["style", "Sour"], ["brewery_id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:208
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:208
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:208
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Blue Sunday"], ["style", "Sour"], ["ABV", 7.0], ["created_at", "2019-05-06 19:27:24.711329"], ["updated_at", "2019-05-06 19:27:24.711329"], ["brewery_id", 7]]
+  ↳ db/seeds.rb:208
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:208
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Cabin Fever"], ["ABV", 6.5], ["style", "American Brown"], ["brewery_id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:213
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:213
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:213
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Cabin Fever"], ["style", "American Brown"], ["ABV", 6.5], ["created_at", "2019-05-06 19:27:24.724813"], ["updated_at", "2019-05-06 19:27:24.724813"], ["brewery_id", 7]]
+  ↳ db/seeds.rb:213
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:213
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Cornlaboration"], ["ABV", 5.8], ["style", "American Lager"], ["brewery_id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:220
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:220
+  [1m[36mBrewery Load (5.5ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:220
+  [1m[36mBeer Create (0.7ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Cornlaboration"], ["style", "American Lager"], ["ABV", 5.8], ["created_at", "2019-05-06 19:27:24.747053"], ["updated_at", "2019-05-06 19:27:24.747053"], ["brewery_id", 8]]
+  ↳ db/seeds.rb:220
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:220
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Dale's Pale Ale Nitro"], ["ABV", 6.5], ["style", "American Pale"], ["brewery_id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:225
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:225
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:225
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dale's Pale Ale Nitro"], ["style", "American Pale"], ["ABV", 6.5], ["created_at", "2019-05-06 19:27:24.755051"], ["updated_at", "2019-05-06 19:27:24.755051"], ["brewery_id", 8]]
+  ↳ db/seeds.rb:225
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:225
+  [1m[36mBeer Load (0.5ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Old Double Bagger Barleywine"], ["ABV", 3.2], ["style", "American Barleywine"], ["brewery_id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:230
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:230
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:230
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Old Double Bagger Barleywine"], ["style", "American Barleywine"], ["ABV", 3.2], ["created_at", "2019-05-06 19:27:24.765862"], ["updated_at", "2019-05-06 19:27:24.765862"], ["brewery_id", 8]]
+  ↳ db/seeds.rb:230
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:230
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "Smoke on The Water"], ["ABV", 7.0], ["style", "Smoke Beer"], ["brewery_id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:235
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:235
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:235
+  [1m[36mBeer Create (1.9ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Smoke on The Water"], ["style", "Smoke Beer"], ["ABV", 7.0], ["created_at", "2019-05-06 19:27:24.774581"], ["updated_at", "2019-05-06 19:27:24.774581"], ["brewery_id", 8]]
+  ↳ db/seeds.rb:235
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:235
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT  "beers".* FROM "beers" WHERE "beers"."name" = ? AND "beers"."ABV" = ? AND "beers"."style" = ? AND "beers"."brewery_id" = ? LIMIT ?[0m  [["name", "All Colorado Apricot Wheat"], ["ABV", 5.5], ["style", "Fruit Wheat Ale"], ["brewery_id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:240
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:240
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:240
+  [1m[36mBeer Create (0.7ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "ABV", "created_at", "updated_at", "brewery_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "All Colorado Apricot Wheat"], ["style", "Fruit Wheat Ale"], ["ABV", 5.5], ["created_at", "2019-05-06 19:27:24.784901"], ["updated_at", "2019-05-06 19:27:24.784901"], ["brewery_id", 8]]
+  ↳ db/seeds.rb:240
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:240

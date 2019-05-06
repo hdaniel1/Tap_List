@@ -12,8 +12,7 @@ class CreateBeers < ActiveRecord::Migration[5.2]
       t.boolean :on_site_purchase
       t.integer :glass_size
       t.string :image
-      t.integer :brewery_id
-      
+
       t.timestamps
     end
   end
