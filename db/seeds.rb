@@ -6,8 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-#get 25 random breweries from brewery DB and insert into the database
-
 require 'brewery_db'
 
 brewery_db = BreweryDB::Client.new do |config|
@@ -15,6 +13,10 @@ brewery_db = BreweryDB::Client.new do |config|
 end
 
 brewery_db.breweries.all.each do |brewery| 
-	Brewery.find_or_create_by(name: brewery.name)
+	Brewery.find_or_create_by(name: brewery.name, 
+							  established: brewery.established.to_i, 
+							  description: brewery.description,
+							  website: brewery.website)
 end 
+
 #for each brewery, get 10 different beers and insert into the database
