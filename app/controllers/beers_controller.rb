@@ -1,5 +1,5 @@
 class BeersController < ApplicationController
-
+	
 	before_action :find_beer, only: [:show, :edit, :update]
 
 	def index

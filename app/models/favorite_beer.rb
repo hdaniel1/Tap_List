@@ -1,0 +1,2 @@
+class FavoriteBeer < ApplicationRecord
+end

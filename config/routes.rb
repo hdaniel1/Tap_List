@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  resources :users
   resources :retailers
   resources :beers
   resources :breweries
-  resources :retailerbeers, only: [:show, :new, :create, :edit, :update]
+  resources :retailerbeers
 
   get '/login', to: "brewery_session#new", as: "login"
 
