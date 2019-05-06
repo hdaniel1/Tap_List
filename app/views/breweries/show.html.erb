@@ -1,0 +1,14 @@
+<h1><%= @brewery.name %> Information</h1>
+
+<ul>
+	<li>City: <%= @brewery.city %></li>
+	<li>State: <%= @brewery.state %></li>
+	<li>Website: <%= link_to @brewery.website, @brewery.website %></li>
+	<li>Year Established: <%= @brewery.established %></li>
+</ul>
+Description:<br> <%= @brewery.description %></li>
+
+<h2>Available Beers</h2>
+<% @brewery.beers do |beer| %>
+	<%= link_to beer.name, beer_path(beer) %>
+<% end %>

@@ -1,5 +1,7 @@
 class BreweriesController < ApplicationController
 
+	layout "brewery"
+	
 	before_action :find_brewery, only: [:show, :edit, :update]
 	def index
 		@breweries = Brewery.all 

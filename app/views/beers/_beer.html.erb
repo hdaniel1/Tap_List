@@ -1,0 +1,37 @@
+<%= form_for @beer do |b| %>
+	<div>
+	<%= b.label "Beer Name" %>
+	<%= b.text_field :name %>
+	</div>
+	<div>
+	<%= b.label "Style" %>
+	<%= b.text_field :style %>
+	</div>	
+	<div>
+	<%= b.label "ABV" %>
+	<%= b.number_field :ABV %>
+	</div>
+	<div>
+	<%= b.label "IBU" %>
+	<%= b.number_field :IBU %>
+	</div>
+	<div>
+	<%= b.label "Available?" %>
+	<%= b.select :available, [['Yes', true], ['No', false]] %>
+	</div>
+	<div>
+	<%= b.label "Price" %>
+	<%= b.number_field :price, step: :any %>
+	</div>
+	<div>
+	<%= b.label "On Site Purchase?" %>
+	<%= b.select :on_site_purchase, [['Yes', true], ['No', false]] %>
+	</div>
+	<div>
+	<%= b.label "Glass Size (in ounces)" %>
+	<%= b.number_field :glass_size %>
+	</div>
+	<div>
+	<%= b.submit %>
+	</div>
+<% end %>

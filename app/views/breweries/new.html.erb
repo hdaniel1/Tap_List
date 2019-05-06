@@ -1,0 +1,5 @@
+<h1>Breweries List</h1>
+
+<% @breweries.each do |brewery| %>
+	<%= link_to brewery.name, brewery_path %>
+<% end %>

@@ -1,0 +1,23 @@
+<h1><%= @beer.name %> Information</h1>
+
+<ul>
+	<li>Style: <%= @beer.style %></li>
+	<li>ABV: <%= @beer.ABV %></li>
+	<li>IBU: <%= @beer.IBU %></li>
+	<li>Price: <%= @beer.price %></li>
+	<li>Available?: <%= @beer.available %></li>
+	<li>Availability: <%= @beer.availability %></li>
+	<li>On Site Purchase?: <%= @beer.on_site_purchase %></li>
+	<li>Glass Size: <%= @beer.glass_size %></li>
+</ul>
+<div>
+Description:
+<%= @beer.description %>
+</div>
+
+<div>
+<%= link_to "Edit this Beer", edit_beer_path(@beer) %>
+</div>
+<div>
+<%= link_to "Beer List", beers_path %>
+</div>

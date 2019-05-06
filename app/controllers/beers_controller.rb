@@ -2,11 +2,22 @@ class BeersController < ApplicationController
 
 	before_action :find_beer, only: [:show, :edit, :update]
 	def index
-		@beer = Beer.all 
+		@beers = Beer.all 
 	end 
+
 
 	def show 
 		
+	end 
+
+	def new
+		@beer = Beer.new 
+	end 
+	
+
+	def create 
+		@beer = Beer.create(beer_params)
+		redirect_to beer_path(@beer)
 	end 
 
 	def edit
@@ -14,7 +25,8 @@ class BeersController < ApplicationController
 	end 
 
 	def update
-		
+		@beer = Beer.update(beer_params)
+		redirect_to beer_path(@beer)
 	end
 
 	private
@@ -24,7 +36,7 @@ class BeersController < ApplicationController
 	end 
 
 	def beer_params
-		params.require(:brewery).permit!
+		params.require(:beer).permit!
 	end 
 
 end
