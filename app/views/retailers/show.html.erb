@@ -19,7 +19,9 @@
 <ol>
 	<% @retailer.get_retailer_beers.each do |b| %>
 		<li><%= link_to b.beer.name, beer_path(b.beer) %></li>
-			<ul> 
+			<ul>
+				<li><%= b.beer.style %> </li>
+				<li> <%= b.beer.ABV %>% </li>
 				<li>$<%= number_with_precision(b.retailer_price, precision: 2) %> per <%= b.glass_size %> oz bottle</li>
 			</ul>
 		<% end %>
@@ -66,7 +68,7 @@
 	</div>
 	<div>
 	<%= b.label "Style" %>
-	<%= b.select :style, grouped_options_for_select(Beer.all_beer_styles) %>
+	<%= b.select :style, grouped_options_for_select(Beer.all_beer_styles), prompt: "Select a Beer Style" %>
 	</div>
 	<div>
 	<%= b.label "ABV" %>

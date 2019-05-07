@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :beer_tags
+  resources :tags
   resources :users, except: [:index]
   resources :retailers
   resources :beers

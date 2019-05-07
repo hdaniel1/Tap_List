@@ -6,14 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-  Brewery.find_or_create_by(name:"Breckenridge Brewery", 
+  Brewery.find_or_create_by(name:"Breckenridge Brewery",
                             city: "Breckenridge",
                             state: "CO",
                             website: "http://www.breckbrew.com/",
                             description:"Breckenridge Brewery was founded in 1990 in Breckenridge, Colorado. In the past two plus decades Breckenridge Brewery has grown from a small 3,000-barrels-a-year brewpub to one of the most successful craft beer and restaurant companies in the nation. It now handcrafts more than 70,000 barrels of fresh beer annually and owns and operates five brewpubs and ale houses in the state of Colorado. For more information visit www.breckbrew.com.",
                             established: 1990
                             )
-    Brewery.find_or_create_by(name:"Dock Street Brewery", 
+    Brewery.find_or_create_by(name:"Dock Street Brewery",
                             city: "Philadelphia",
                             state: "PA",
                             website: "http://www.dockstreetbeer.com",
@@ -21,7 +21,7 @@
                             established: 1985
                             )
 
-    Brewery.find_or_create_by(name:"Lagunitas Brewing Company", 
+    Brewery.find_or_create_by(name:"Lagunitas Brewing Company",
                             city: "Petaluma",
                             state: "CA",
                             website: "http://www.lagunitas.com/",
@@ -29,7 +29,7 @@
                             established: 1993
                             )
 
-    Brewery.find_or_create_by(name:"Laughing Dog Brewing", 
+    Brewery.find_or_create_by(name:"Laughing Dog Brewing",
                             city: "Ponderay",
                             state: "ID",
                             website: "http://www.laughingdogbrewing.com/",
@@ -37,7 +37,7 @@
                             established: 2005
                             )
 
-    Brewery.find_or_create_by(name:"SweetWater Brewing Company", 
+    Brewery.find_or_create_by(name:"SweetWater Brewing Company",
                             city: "Atlanta",
                             state: "GA",
                             website: "http://www.sweetwaterbrew.com/",
@@ -45,7 +45,7 @@
                             established: 1997
                             )
 
-    Brewery.find_or_create_by(name:"Zero Gravity Craft Brewery", 
+    Brewery.find_or_create_by(name:"Zero Gravity Craft Brewery",
                             city: "Burlington",
                             state: "VT",
                             website: "http://www.zerogravitybeer.com/",
@@ -53,7 +53,7 @@
                             established: 2004
                             )
 
-    Brewery.find_or_create_by(name:"New Holland Brewing Company", 
+    Brewery.find_or_create_by(name:"New Holland Brewing Company",
                             city: "Holland",
                             state: "MI",
                             website: "http://newhollandbrew.com/",
@@ -63,7 +63,7 @@ We believe the art of craft lives in fostering rich experiences for our customer
                             established: 1996
                             )
 
-    Brewery.find_or_create_by(name:"Oskar Blues Brewery", 
+    Brewery.find_or_create_by(name:"Oskar Blues Brewery",
                             city: "Longmont",
                             state: "CO",
                             website: "http://www.oskarblues.com/",
@@ -71,7 +71,7 @@ We believe the art of craft lives in fostering rich experiences for our customer
                             established: 1997
                             )
 ### Beers for Brekenridge Brewery ###
-  
+
   Beer.find_or_create_by(name: "Breckenridge Christmas Ale",
   ABV: 7.4,
   style: "American Strong Pale",
@@ -289,3 +289,9 @@ We believe the art of craft lives in fostering rich experiences for our customer
   ABV: 5.5,
   style: "Fruit Wheat Ale",
   brewery_id: 8)
+
+  beer_tag_words = ["award-winning", "balanced", "bitter", "bold", "brewed", "brewery-fresh", "bright", "cask-conditioned", "chilled", "classic"]
+
+  beer_tag_words.each do |tag|
+    Tag.find_or_create_by(description: tag)
+  end

@@ -8,6 +8,8 @@ class BeersController < ApplicationController
 
 	def show
 		@retailerbeer = RetailerBeer.new
+		@beer_tag = BeerTag.new
+		@tag = Tag.new
 	end
 
 	def new
@@ -39,11 +41,11 @@ class BeersController < ApplicationController
 	private
 
 	def create_retailerbeer
-		RetailerBeer.create(beer_id: @beer.id, 
-								retailer_id: params["beer"]["retailer_id"], 
-								glass_size: params["beer"]["glass_size"], 
+		RetailerBeer.create(beer_id: @beer.id,
+								retailer_id: params["beer"]["retailer_id"],
+								glass_size: params["beer"]["glass_size"],
 								retailer_price: params["beer"]["price"]  )
-	end 
+	end
 	def find_beer
 		@beer = Beer.find(params[:id])
 	end
@@ -59,5 +61,6 @@ class BeersController < ApplicationController
 	def beer_params_without_retailer
 		params.require(:beer).permit(:name, :style, :ABV, :IBU, :description, :available, :price, :availability, :on_site_purchase, :glass_size, :image, :brewery_id)
 	end
+
 
 end

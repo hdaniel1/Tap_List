@@ -33,7 +33,7 @@ Description:
 <%#this is for retailers only%>
 <h2>Add this beer to my tap list</h2>
 
-<%= form_for @retailerbeer do |rb| 
+<%= form_for @retailerbeer do |rb|
 	%>
 	<%= rb.hidden_field :beer_id, value: @beer.id %>
 	<%= rb.hidden_field :retailer_id, value: 1%>
@@ -52,4 +52,12 @@ Description:
 	<%= rb.submit "Add To Tap" %>
 <% end %>
 
-
+<h2> Tag this Beer </h2>
+<%= form_for @beer_tag do |bt| %>
+	<%= bt.collection_select :tag_id, Tag.all, :id, :description, prompt: "Choose an Existing Tag"%>
+	<%= bt.fields_for :tag, @tag.beer_tags.build do |t| %>
+	<%= t.label "Description" %>
+	<%= t.text_field :description %>
+		<% end %>
+	<%= bt.submit "Add Tag" %>
+	<% end %>

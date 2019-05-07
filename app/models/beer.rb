@@ -5,14 +5,17 @@ class Beer < ApplicationRecord
 	has_many :retailers, through: :retailer_beers
 	has_many :favorite_beers
 	has_many :users, through: :favorite_beers
+	has_many :beer_tags
+	has_many :tags, through: :beer_tags
 	validates :IBU, :inclusion => 5..120
 	accepts_nested_attributes_for :retailer_beers
 	accepts_nested_attributes_for :brewery
+	accepts_nested_attributes_for :tags
 
 
 	def self.beer_glass_sizes
 		[4, 8, 12, 16, 24]
-	end 
+	end
 
 	def self.all_beer_styles
 		[["Bocks",

@@ -2,7 +2,7 @@
 	<% @beer.errors.full_messages.each do |message| %>
 		<li><%= message %></li>
 	<% end %>
-<% end %> 
+<% end %>
 
 <%= form_for @beer do |b| %>
 	<div>
@@ -11,7 +11,7 @@
 	</div>
 	<div>
 	<%= b.label "Style" %>
-	<%= b.select :style, grouped_options_for_select(Beer.all_beer_styles) %>
+	<%= b.select :style, grouped_options_for_select(Beer.all_beer_styles), prompt: "Select a Beer Style"  %>
 	</div>
 	<div>
 	<%= b.label "ABV" %>
