@@ -5,8 +5,8 @@
 	</div>
 	<div>
 	<%= b.label "Style" %>
-	<%= b.text_field :style %>
-	</div>	
+	<%= b.select :style, grouped_options_for_select(Beer.all_beer_styles) %>
+	</div>
 	<div>
 	<%= b.label "ABV" %>
 	<%= b.number_field :ABV %>
