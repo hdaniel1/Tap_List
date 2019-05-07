@@ -29,23 +29,32 @@
 	<%= b.collection_select :brewery_id, Brewery.all, :id, :name, prompt: "Select a Brewery" %>
 	</div>
 	<div>
-
- 	<%= b.fields_for :brewery, @beer.build_brewery do |brew| %>
-	<%= brew.label "Brewery Name" %>
-	<%= brew.text_field :name %>
-	<%= brew.label "Brewery City" %>
-	<%= brew.text_field :city %>
-	<%= brew.label "Brewery State" %>
-	<%= brew.select :state, options_for_select(Retailer.us_states) %>
-	<%= brew.label "Brewery Description" %>
-	<%= brew.text_area :description %>
-	<%= brew.label "Brewery Website" %>
-	<%= brew.text_field :website %>
-	<%= brew.label "Year Established" %>
-	<%= brew.number_field :established %>
-	<% end %>
-
-
+	 	<%= b.fields_for :brewery, @beer.build_brewery do |brew| %>
+	 	<div>
+		<%= brew.label "Brewery Name" %>
+		<%= brew.text_field :name %>
+		</div>
+		<div>
+		<%= brew.label "Brewery City" %>
+		<%= brew.text_field :city %>
+		</div>
+		<div>
+		<%= brew.label "Brewery State" %>
+		<%= brew.select :state, options_for_select(Retailer.us_states) %>
+		</div>
+		<div>
+		<%= brew.label "Brewery Description" %>
+		<%= brew.text_area :description %>
+		</div>
+		<div>
+		<%= brew.label "Brewery Website" %>
+		<%= brew.text_field :website %>
+		</div>
+		<div>
+		<%= brew.label "Year Established" %>
+		<%= brew.number_field :established %>
+		</div>
+		<% end %>
 	</div>
 	<%=b.hidden_field :retailer_id, value: @retailer.id %>
 	<div>

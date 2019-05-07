@@ -1,0 +1,27 @@
+<%=form_for @brewery do |b| %>
+	<div>
+	<%= b.label "Brewery Name" %>
+	<%=	b.text_field :name %>
+	</div>
+	<div>
+	<%= b.label "City" %>
+	<%=	b.text_field :city %>
+	</div>
+	<div>
+	<%= b.label "State" %>
+	<%=	b.select :state, options_for_select(Brewery.us_states) %>
+	</div>
+	<div>
+	<%= b.label "Website" %>
+	<%=	b.text_field :website %>
+	</div>
+	<div>
+	<%= b.label "Year Established" %>
+	<%=	b.text_field :established %>
+	</div>
+	<div>
+	<%= b.label "Description" %>
+	<%=	b.text_area :description%>
+	</div>
+	<%= b.submit %>
+<% end %>

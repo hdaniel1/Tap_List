@@ -16,7 +16,9 @@ class BeersController < ApplicationController
 
 
 	def create
-		if params["beer"]["brewery_attributes"]["name"] == ""
+		if params["beer"]["retailer_id"] == nil && params["beer"]["brewery_attributes"] == nil
+			beerparam = beer_params_without_retailer
+		elsif params["beer"]["brewery_attributes"]["name"] == ""
 			beerparam = beer_params_with_existing_brewery
 		else
 			beerparam = beer_params_with_new_brewery
@@ -45,6 +47,10 @@ class BeersController < ApplicationController
 
 	def beer_params_with_new_brewery
 		params.require(:beer).permit(:name, :style, :ABV, :IBU, :description, :available, :price, :availability, :on_site_purchase, :glass_size, :image, :retailer_id, brewery_attributes: [:name, :city, :state, :description, :established, :website])
+	end
+
+	def beer_params_without_retailer
+		params.require(:beer).permit(:name, :style, :ABV, :IBU, :description, :available, :price, :availability, :on_site_purchase, :glass_size, :image, :brewery_id)
 	end
 
 end
