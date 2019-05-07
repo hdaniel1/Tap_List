@@ -1,4 +1,4 @@
-class RetailerBeersnController < ApplicationController
+class RetailerBeersController < ApplicationController
 
 	def new
 	
@@ -6,7 +6,6 @@ class RetailerBeersnController < ApplicationController
 
 	def create
 		@retailerbeer = RetailerBeer.create(retailerbeer_params)
-
 		redirect_to retailer_path(@retailerbeer.retailer)
 	end 
 

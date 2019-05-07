@@ -2,9 +2,9 @@
 
 <ul>
 	<li>Style: <%= @beer.style %></li>
-	<li>ABV: <%= @beer.ABV %></li>
-	<li>IBU: <%= @beer.IBU %></li>
-	<li>Price: <%= @beer.price %></li>
+	<li>ABV: <%= number_with_precision(@beer.ABV, precision:2) %></li>
+	<li>IBU: <%= number_with_precision(@beer.IBU, precision:2) %></li>
+	<li>Price: <%= number_with_precision(@beer.price, precision:2) %></li>
 	<li>Available?: <%= @beer.available %></li>
 	<li>Availability: <%= @beer.availability %></li>
 	<li>On Site Purchase?: <%= @beer.on_site_purchase %></li>
@@ -32,5 +32,24 @@ Description:
 </ul>
 <%#this is for retailers only%>
 <h2>Add this beer to my tap list</h2>
+
+<%= form_for @retailerbeer do |rb| 
+	%>
+	<%= rb.hidden_field :beer_id, value: @beer.id %>
+	<%= rb.hidden_field :retailer_id, value: 1%>
+	<div>
+	<%= rb.label "Your Glass Size" %>
+	<%= rb.select :glass_size, options_for_select(Beer.beer_glass_sizes), prompt: "Select a Glass Size" %>
+	</div>
+	<div>
+	<%= rb.label "Your Price" %>
+	<%= rb.number_field :retailer_price, step: :any %>
+	</div>
+	<div>
+	<%= rb.label "Number of Barrels" %>
+	<%= rb.number_field :number_of_barrels %>
+	</div>
+	<%= rb.submit "Add To Tap" %>
+<% end %>
 
 

@@ -16,9 +16,12 @@
 
 <%#add all beers on tap list for customers to see below%>
 <h2> See Available Beers </h2>
-<ul>
+<ol>
 	<% @retailer.get_retailer_beers.each do |b| %>
-		<li> <%= link_to b.beer.name, beer_path(b.beer) %> </li>
+		<li><%= link_to b.beer.name, beer_path(b.beer) %></li>
+			<ul> 
+				<li>$<%= number_with_precision(b.retailer_price, precision: 2) %> per <%= b.glass_size %> oz bottle</li>
+			</ul>
 		<% end %>
 </ul>
 
@@ -87,7 +90,7 @@
 	</div>
 	<div>
 	<%= b.label "Glass Size (in ounces)" %>
-	<%= b.number_field :glass_size %>
+	<%= b.select :glass_size, options_for_select(Beer.beer_glass_sizes), prompt: "Select a Glass Size" %>
 	</div>
 	<div>
 	<%= b.submit %>

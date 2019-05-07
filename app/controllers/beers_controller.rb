@@ -20,10 +20,10 @@ class BeersController < ApplicationController
 			@beer = Beer.create(beer_params_without_retailer)
 		elsif params["beer"]["brewery_attributes"]["name"] == ""
 			@beer = Beer.create(beer_params_with_existing_brewery)
-			RetailerBeer.create(beer_id: @beer.id, retailer_id: params["beer"]["retailer_id"])
+			create_retailerbeer
 		else
 			@beer = Beer.create(beer_params_with_new_brewery)
-			RetailerBeer.create(beer_id: @beer.id, retailer_id: params["beer"]["retailer_id"])
+			create_retailerbeer
 		end
 			redirect_to beer_path(@beer)
 	end
@@ -38,6 +38,12 @@ class BeersController < ApplicationController
 
 	private
 
+	def create_retailerbeer
+		RetailerBeer.create(beer_id: @beer.id, 
+								retailer_id: params["beer"]["retailer_id"], 
+								glass_size: params["beer"]["glass_size"], 
+								retailer_price: params["beer"]["price"]  )
+	end 
 	def find_beer
 		@beer = Beer.find(params[:id])
 	end

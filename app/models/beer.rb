@@ -8,4 +8,8 @@ class Beer < ApplicationRecord
 	validates :IBU, :inclusion => 5..120
 	accepts_nested_attributes_for :retailer_beers
 	accepts_nested_attributes_for :brewery
+
+	def self.beer_glass_sizes
+		[4, 8, 12, 16, 24]
+	end 
 end

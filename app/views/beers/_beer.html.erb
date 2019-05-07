@@ -1,3 +1,9 @@
+<% if @beer.errors %>
+	<% @beer.errors.full_messages.each do |message| %>
+		<li><%= message %></li>
+	<% end %>
+<% end %> 
+
 <%= form_for @beer do |b| %>
 	<div>
 	<%= b.label "Beer Name" %>
@@ -29,7 +35,7 @@
 	</div>
 	<div>
 	<%= b.label "Glass Size (in ounces)" %>
-	<%= b.number_field :glass_size %>
+	<%= b.select :glass_size, options_for_select(Beer.beer_glass_sizes), prompt: "Select a Glass Size" %>
 	</div>
 	<div>
 	<%= b.submit %>
