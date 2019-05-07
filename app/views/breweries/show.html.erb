@@ -14,7 +14,7 @@ Description:<br> <%= @brewery.description %><br><br>
 
 <h2>Available Beers</h2>
 <ol>
-<% @brewery.beers.each do |beer| %>
+<% @brewery.get_available_beers.each do |beer| %>
 	<li><%= link_to beer.name, beer_path(beer) %></li>
 <% end %>
 </ol>
