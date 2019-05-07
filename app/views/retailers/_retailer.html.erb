@@ -9,7 +9,7 @@
 	</div>
 	<div>
 	<%= r.label "Your State" %>
-	<%= r.text_field :state %>	
+	<%= r.select :state, options_for_select(Retailer.us_states) %>	
 	</div>
 	<div>
 	<%= r.submit %>

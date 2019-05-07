@@ -1,0 +1,25 @@
+<h1>Your Profile</h1>
+
+<ul>
+	<li>Name: <%= @user.name %></li>
+	<li>Username: <%= @user.username %></li>
+</ul>
+
+
+<%= link_to "Edit Profile", edit_user_path(@user) %>
+
+<% if @user.brewery %>
+	<div>
+		<%= link_to "Manage #{@user.brewery.name}", brewery_path(@user.brewery) %>
+	</div>
+<% end %>
+
+<% if @user.retailer %>
+	<div>
+		<%= link_to "Manage #{@user.retailer.name}", retailer_path(@user.retailer) %>
+	</div>
+<% end %>
+
+<div>
+<%= link_to "Browse Beer Selection", beers_path %>
+</div>

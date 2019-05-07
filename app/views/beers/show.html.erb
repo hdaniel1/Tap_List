@@ -26,7 +26,7 @@ Description:
 <%#this is for retailers only%>
 <h2>Add this beer to my tap list</h2>
 
-<%= form_for @retailerbeer do |r| %>
+<%= form_for retailer_beer_path(@retailersbeer) do |r| %>
 	<%= r.hidden_field :retailer_id %>
 	<%= r.hidden_field :beer_id, value= @beer.id %>
 	<%= r.label "Your Price" %>

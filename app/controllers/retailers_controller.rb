@@ -23,7 +23,8 @@ class RetailersController < ApplicationController
 	end 
 
 	def update 
-
+		@retailer.update(retailer_params)
+		redirect_to retailer_path(@retailer)
 	end 
 
 	private 

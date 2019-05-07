@@ -16,7 +16,8 @@ class BreweriesController < ApplicationController
 	end 
 
 	def update
-		
+		@brewery.update(brewery_params)
+		redirect_to brewery_path(@brewery)
 	end
 
 	private

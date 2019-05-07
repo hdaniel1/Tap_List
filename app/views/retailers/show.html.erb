@@ -5,7 +5,13 @@
 	<li><%= @retailer.state %></li>
 </ul>
 
+<%#only show edit link if session user owns the retail %>
+<div>
+<%=link_to "Edit this Retailer", edit_retailer_path(@retailer) %>
+</div>
 <%#need to make sure this link only shows for retailers%>
+<div>
 <%= link_to "Browse Breweries", breweries_path %>
+</div>
 
 <%#add all beers on tap list for customers to see below%>

@@ -1,0 +1,25 @@
+<%=form_for @user do |u| %>
+	<div>
+	<%= u.label "What is your name?" %>
+	<%= u.text_field :name %>
+	</div>
+	<div>
+	<%= u.label "Please type a Username" %>
+	<%= u.text_field :username %>
+	</div>
+	<div>
+	<%= u.label "Are you a Brewery?" %>
+	<%= u.check_box :is_brewery %>
+	</div>
+	<div>
+	<%= u.label "Are you a Retailer?" %>
+	<%= u.check_box :is_retailer %>
+	</div>
+	<div>
+	<%= u.label "Are you a Customer?" %>
+	<%= u.check_box :is_customer %>
+	</div>
+	<div>
+	<%= u.submit%>
+	</div>
+<% end %>

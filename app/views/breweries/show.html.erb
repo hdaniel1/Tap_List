@@ -6,7 +6,11 @@
 	<li>Website: <%= link_to @brewery.website, @brewery.website %></li>
 	<li>Year Established: <%= @brewery.established %></li>
 </ul>
-Description:<br> <%= @brewery.description %></li>
+Description:<br> <%= @brewery.description %><br><br>
+<%#only show edit button if session user owns this brewery %>
+<div>
+<%= link_to "Edit #{@brewery.name}", edit_brewery_path(@brewery) %>
+</div>
 
 <h2>Available Beers</h2>
 <ol>
@@ -14,7 +18,7 @@ Description:<br> <%= @brewery.description %></li>
 	<li><%= link_to beer.name, beer_path(beer) %></li>
 <% end %>
 </ol>
-
+<%#only show add new offering if session user is brewery owner%>
 <h2>Add a new offering</h2>
 
 <%= form_for @beer do |b| %>

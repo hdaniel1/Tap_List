@@ -1,22 +1,19 @@
 class UsersController < ApplicationController
 
+	# layout "login"
 	before_action :find_user, only: [:show, :edit, :update]
-
-	def index
-		@users = user.all 
-	end 
 
 	def show 
 		@retaileruser = User.new
 	end
 
 	def new
-		@user = user.new 
+		@user = User.new 
 	end 
 	
 
 	def create 
-		@user = user.create(user_params)
+		@user = User.create(user_params)
 
 		redirect_to user_path(@user)
 	end 
@@ -33,7 +30,7 @@ class UsersController < ApplicationController
 	private
 
 	def find_user
-		@user = user.find(params[:id])
+		@user = User.find(params[:id])
 	end 
 
 	def user_params
