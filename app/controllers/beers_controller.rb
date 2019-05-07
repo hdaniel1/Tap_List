@@ -17,13 +17,14 @@ class BeersController < ApplicationController
 
 	def create
 		if params["beer"]["retailer_id"] == nil && params["beer"]["brewery_attributes"] == nil
-			beerparam = beer_params_without_retailer
+			@beer = Beer.create(beer_params_without_retailer)
 		elsif params["beer"]["brewery_attributes"]["name"] == ""
-			beerparam = beer_params_with_existing_brewery
+			@beer = Beer.create(beer_params_with_existing_brewery)
+			RetailerBeer.create(beer_id: @beer.id, retailer_id: params["beer"]["retailer_id"])
 		else
-			beerparam = beer_params_with_new_brewery
+			@beer = Beer.create(beer_params_with_new_brewery)
+			RetailerBeer.create(beer_id: @beer.id, retailer_id: params["beer"]["retailer_id"])
 		end
-			@beer = Beer.create(beerparam)
 			redirect_to beer_path(@beer)
 	end
 

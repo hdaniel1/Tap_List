@@ -23,6 +23,13 @@ Description:
 <%= link_to "Beer List", beers_path %>
 </div>
 
+<h2>Retailers Offering This Beer</h2>
+
+<ul>
+	<% @beer.retailers.each do |retailer| %>
+		<li><%= link_to retailer.name, retailer_path(retailer) %></li>
+	<% end %>
+</ul>
 <%#this is for retailers only%>
 <h2>Add this beer to my tap list</h2>
 

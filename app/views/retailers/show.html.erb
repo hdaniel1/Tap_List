@@ -17,8 +17,8 @@
 <%#add all beers on tap list for customers to see below%>
 <h2> See Available Beers </h2>
 <ul>
-	<% @retailer.beers.each do |b| %>
-		<li> <%= link_to b.name, beer_path(b) %> </li>
+	<% @retailer.get_retailer_beers.each do |b| %>
+		<li> <%= link_to b.beer.name, beer_path(b.beer) %> </li>
 		<% end %>
 </ul>
 
