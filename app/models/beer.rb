@@ -6,4 +6,5 @@ class Beer < ApplicationRecord
 	has_many :favorite_beers
 	has_many :users, through: :favorite_beers
 	accepts_nested_attributes_for :retailer_beers
-end 
+	accepts_nested_attributes_for :brewery
+end

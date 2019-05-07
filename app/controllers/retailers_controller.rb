@@ -1,39 +1,40 @@
 class RetailersController < ApplicationController
 
 	before_action :find_retailer, only: [:show, :edit, :update]
-	def index 
-		@retailers = Retailer.all 
-	end 
+	def index
+		@retailers = Retailer.all
+	end
 
 	def show
 		@breweries = Brewery.all
-	end 
+		@beer = Beer.new
+	end
 
 	def new
 		@retailer = Retailer.new
-	end 
+	end
 
 	def create 
 		@retailer = Retailer.create(retailer_params)
 		redirect_to retailer_path(@retailer)
-	end 
+	end
 
-	def edit 
+	def edit
 
-	end 
+	end
 
-	def update 
+	def update
 		@retailer.update(retailer_params)
 		redirect_to retailer_path(@retailer)
-	end 
+	end
 
-	private 
+	private
 
-	def find_retailer 
+	def find_retailer
 		@retailer = Retailer.find(params[:id])
-	end 
+	end
 
 	def retailer_params
 		params.require(:retailer).permit!
-	end 
+	end
 end

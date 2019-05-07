@@ -15,3 +15,72 @@
 </div>
 
 <%#add all beers on tap list for customers to see below%>
+<h2> See Available Beers </h2>
+<ul>
+	<% @retailer.beers.each do |b| %>
+		<li> <%= link_to b.name, beer_path(b) %> </li>
+		<% end %>
+</ul>
+
+<h2>Add a new offering</h2>
+
+<%= form_for @beer do |b| %>
+	<div>
+	<%= b.collection_select :brewery_id, Brewery.all, :id, :name, prompt: "Select a Brewery" %>
+	</div>
+	<div>
+
+ 	<%= b.fields_for :brewery, @beer.build_brewery do |brew| %>
+	<%= brew.label "Brewery Name" %>
+	<%= brew.text_field :name %>
+	<%= brew.label "Brewery City" %>
+	<%= brew.text_field :city %>
+	<%= brew.label "Brewery State" %>
+	<%= brew.select :state, options_for_select(Retailer.us_states) %>
+	<%= brew.label "Brewery Description" %>
+	<%= brew.text_area :description %>
+	<%= brew.label "Brewery Website" %>
+	<%= brew.text_field :website %>
+	<%= brew.label "Year Established" %>
+	<%= brew.number_field :established %>
+	<% end %>
+
+
+	</div>
+	<%=b.hidden_field :retailer_id, value: @retailer.id %>
+	<div>
+	<%= b.label "Beer Name" %>
+	<%= b.text_field :name %>
+	</div>
+	<div>
+	<%= b.label "Style" %>
+	<%= b.text_field :style %>
+	</div>
+	<div>
+	<%= b.label "ABV" %>
+	<%= b.number_field :ABV, step: :any %>
+	</div>
+	<div>
+	<%= b.label "IBU" %>
+	<%= b.number_field :IBU %>
+	</div>
+	<div>
+	<%= b.label "Available?" %>
+	<%= b.select :available, [['Yes', true], ['No', false]] %>
+	</div>
+	<div>
+	<%= b.label "Price" %>
+	<%= b.number_field :price, step: :any %>
+	</div>
+	<div>
+	<%= b.label "On Site Purchase?" %>
+	<%= b.select :on_site_purchase, [['Yes', true], ['No', false]] %>
+	</div>
+	<div>
+	<%= b.label "Glass Size (in ounces)" %>
+	<%= b.number_field :glass_size %>
+	</div>
+	<div>
+	<%= b.submit %>
+	</div>
+<% end %>
