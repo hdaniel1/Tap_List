@@ -12,7 +12,12 @@
   <body>
     <% if session["user_id"] %>
       <div>Welcome <%= get_current_user.username %></div>
+      <div>
       <%= link_to "Logout", logout_path, method: "DELETE" %>
+      </div>
+      <div>
+      <%= link_to "Home Page", user_path(get_current_user) %>
+      </div>
     <% end %>
     
     <%= yield %>
