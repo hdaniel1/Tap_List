@@ -11,6 +11,13 @@
 	<li>Glass Size: <%= @beer.glass_size %></li>
 	<li>Brewery: <%= link_to @beer.brewery.name, brewery_path(@beer.brewery) %></li>
 </ul>
+
+<h2>Tags associated with this beer</h2>
+<ul>
+	<% @beer.tags.each do |tag| %>
+		<li><%= tag.description %></li>
+	<% end %>
+</ul>
 <div>
 Description:
 <%= @beer.description %>
@@ -52,12 +59,32 @@ Description:
 	<%= rb.submit "Add To Tap" %>
 <% end %>
 
-<h2> Tag this Beer </h2>
+<% if FavoriteBeer.find_by(user_id: 2, beer_id: @beer.id) %>
+		<h2>You already favorited this beer!</h2>
+	<% else %>
+		<h2>Favorite this Beer</h2>
+		<%= form_for @favorite_beer do |f| %>
+			<%= f.hidden_field :beer_id, value: @beer.id %>
+			<%= f.hidden_field :user_id, value: 2 %>
+			<%= f.submit "Favorite" %>
+		<% end %>
+	<% end %>
+
+<h2>Add a Tag to this Beer </h2>
 <%= form_for @beer_tag do |bt| %>
 	<%= bt.collection_select :tag_id, Tag.all, :id, :description, prompt: "Choose an Existing Tag"%>
-	<%= bt.fields_for :tag, @tag.beer_tags.build do |t| %>
-	<%= t.label "Description" %>
-	<%= t.text_field :description %>
-		<% end %>
+	<%= bt.hidden_field :beer_id, value: @beer.id %>
 	<%= bt.submit "Add Tag" %>
 	<% end %>
+<h3>OR</h3>
+
+<h2>Create a new tag:</h2>
+<div>
+<%= form_for @tag do |t| %>
+	<%= hidden_field_tag 'beer_id', @beer.id %>
+	<%= t.label "Description" %>
+	<%= t.text_field :description %>
+	<%= t.submit "Add Tag" %>
+<% end %>
+</div>
+

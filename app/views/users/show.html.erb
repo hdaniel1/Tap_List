@@ -20,6 +20,12 @@
 	</div>
 <% end %>
 
+<h2>My Favorite Beers</h2>
+<ul>
+	<% @user.beers.each do |beer| %>
+		<li><%= link_to beer.name, beer_path(beer) %></li>
+	<% end %>
+</ul>
 <div>
 <%= link_to "Browse Beer Selection", beers_path %>
 </div>

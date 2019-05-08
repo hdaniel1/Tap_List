@@ -10,6 +10,7 @@ class BeersController < ApplicationController
 		@retailerbeer = RetailerBeer.new
 		@beer_tag = BeerTag.new
 		@tag = Tag.new
+		@favorite_beer = FavoriteBeer.new
 	end
 
 	def new

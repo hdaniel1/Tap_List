@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  resources :beer_tags
-  resources :tags
+  resources :beer_tags, only: [:new, :create]
+  resources :tags, only:[:new, :create]
   resources :users, except: [:index]
+  resources :favorite_beers, only:[:new, :create]
   resources :retailers
   resources :beers
   resources :breweries
-  resources :retailer_beers
+  resources :retailer_beers, only:[:new, :create]
 
 
   get '/login', to: "sessions#new", as: "login"
