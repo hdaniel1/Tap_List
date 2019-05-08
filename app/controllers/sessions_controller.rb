@@ -1,23 +1,21 @@
 class SessionsController < ApplicationController
 
 	def new
-	
-	end 
+	end
 
 	def create
 		@user = User.find_by(username: params[:username])
-
-		if @user
+		if @user && @user.authenticate(params[:password])
 	        session[:user_id] = @user.id
-	        redirect_to snacks_path
-	    else 
-	        flash["notice"] = "No user found with that username"
+	        redirect_to user_path(@user)
+	    else
+	        flash["notice"] = "No account found with that username and password combination"
 	        render :new
 	    end
-	end 
+	end
 
 	def destroy
 	    session.clear
 	    redirect_to login_path
   	end
-end 
+end

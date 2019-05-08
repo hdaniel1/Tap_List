@@ -12,7 +12,6 @@ class Beer < ApplicationRecord
 	accepts_nested_attributes_for :brewery
 	accepts_nested_attributes_for :tags
 
-
 	def self.beer_glass_sizes
 		[4, 8, 12, 16, 24]
 	end
