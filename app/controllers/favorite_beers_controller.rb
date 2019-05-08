@@ -1,4 +1,8 @@
 class FavoriteBeersController < ApplicationController
+	before_action :find_fave_beer
+	def show
+
+	end 
 
 	def new
 		@favorite_beer = FavoriteBeer.new
@@ -9,9 +13,17 @@ class FavoriteBeersController < ApplicationController
 		redirect_to beer_path(@favorite_beer.beer)
 	end 
 
+	def destroy
+
+	end 
+
 	private 
 
+	def find_fave_beer
+		@favorite_beer = FavoriteBeer.find_by(params[:id])
+	end
+	
 	def fave_beer_params
-		params.require(:favorite_beer).permit(:beer_id, :user_id)
+		params.require(:favorite_beer).permit(:id, :beer_id, :user_id)
 	end 
 end

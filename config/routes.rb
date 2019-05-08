@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :beer_tags, only: [:new, :create, :delete]
+  resources :beer_tags, only: [:new, :create]
   resources :tags, only:[:new, :create]
   resources :users, except: [:index]
-  resources :favorite_beers, only:[:new, :create]
+  resources :favorite_beers, only:[:new, :create, :delete, :show]
   resources :retailers
   resources :beers
   resources :breweries
