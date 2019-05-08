@@ -8,10 +8,19 @@ class UsersController < ApplicationController
 		if get_current_user.is_retailer
 			@retailer = Retailer.new
 		end
+		if get_current_user.is_brewery
+			@unclaimed_breweries = Brewery.where(user_id: nil)
+			@brewery = Brewery.new
+		end
+
 	end
 
 	def new
-		@user = User.new
+		if get_current_user
+			redirect_to user_path(get_current_user)
+		else
+			@user = User.new
+		end
 	end
 
 

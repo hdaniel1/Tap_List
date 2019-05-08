@@ -33,9 +33,12 @@ class BeersController < ApplicationController
 
 	def create
 		if params["beer"]["retailer_id"] == nil && params["beer"]["brewery_attributes"] == nil
-			@beer = Beer.create(beer_params_without_retailer)
+			@beer = Beer.new(beer_params_without_retailer)
+			@beer.save
 		elsif params["beer"]["brewery_attributes"]["name"] == ""
-			@beer = Beer.create(beer_params_with_existing_brewery)
+			@beer = Beer.new(beer_params_with_existing_brewery)
+			byebug
+			@beer.save
 			create_retailerbeer
 		else
 			@beer = Beer.create(beer_params_with_new_brewery)

@@ -1,4 +1,5 @@
 <%=form_for @brewery do |b| %>
+	<%= b.hidden_field :user_id, value: @user.id %>
 	<div>
 	<%= b.label "Brewery Name" %>
 	<%=	b.text_field :name %>

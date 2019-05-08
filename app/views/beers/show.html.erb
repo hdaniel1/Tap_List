@@ -44,7 +44,7 @@ Description:
 <%= form_for @retailerbeer do |rb|
 	%>
 	<%= rb.hidden_field :beer_id, value: @beer.id %>
-	<%= rb.hidden_field :retailer_id, value: 1%>
+	<%= rb.hidden_field :retailer_id, value: get_current_user.retailer.id %>
 	<div>
 	<%= rb.label "Your Glass Size" %>
 	<%= rb.select :glass_size, options_for_select(Beer.beer_glass_sizes), prompt: "Select a Glass Size" %>
