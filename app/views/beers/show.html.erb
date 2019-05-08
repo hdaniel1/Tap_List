@@ -37,7 +37,8 @@ Description:
 		<li><%= link_to retailer.name, retailer_path(retailer) %></li>
 	<% end %>
 </ul>
-<%#this is for retailers only%>
+
+<% if get_current_user.is_retailer %>
 <h2>Add this beer to my tap list</h2>
 
 <%= form_for @retailerbeer do |rb|
@@ -58,14 +59,15 @@ Description:
 	</div>
 	<%= rb.submit "Add To Tap" %>
 <% end %>
+<% end %>
 
-<% if FavoriteBeer.find_by(user_id: 2, beer_id: @beer.id) %>
+<% if FavoriteBeer.find_by(user_id: get_current_user.id, beer_id: @beer.id) %>
 		<h2>You already favorited this beer!</h2>
 	<% else %>
 		<h2>Favorite this Beer</h2>
 		<%= form_for @favorite_beer do |f| %>
 			<%= f.hidden_field :beer_id, value: @beer.id %>
-			<%= f.hidden_field :user_id, value: 2 %>
+			<%= f.hidden_field :user_id, value: get_current_user.id %>
 			<%= f.submit "Favorite" %>
 		<% end %>
 	<% end %>
@@ -87,4 +89,3 @@ Description:
 	<%= t.submit "Add Tag" %>
 <% end %>
 </div>
-

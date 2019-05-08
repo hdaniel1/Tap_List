@@ -5,6 +5,9 @@ class UsersController < ApplicationController
 
 	def show
 		@retaileruser = User.new
+		if get_current_user.is_retailer
+			@retailer = Retailer.new
+		end
 	end
 
 	def new
@@ -13,6 +16,7 @@ class UsersController < ApplicationController
 
 
 	def create
+
 		@user = User.new(user_params)
 
     if @user.valid?

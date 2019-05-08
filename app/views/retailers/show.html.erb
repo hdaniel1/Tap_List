@@ -5,14 +5,14 @@
 	<li><%= @retailer.state %></li>
 </ul>
 
-<%#only show edit link if session user owns the retail %>
+<% if get_current_user.is_retailer && @retailer.user_id == get_current_user.id %>
 <div>
 <%=link_to "Edit this Retailer", edit_retailer_path(@retailer) %>
 </div>
-<%#need to make sure this link only shows for retailers%>
 <div>
 <%= link_to "Browse Breweries", breweries_path %>
 </div>
+<% end %>
 
 <%#add all beers on tap list for customers to see below%>
 <h2> See Available Beers </h2>
@@ -27,6 +27,7 @@
 		<% end %>
 </ul>
 
+<% if get_current_user.is_retailer && @retailer.user_id == get_current_user.id %>
 <h2>Add a new offering</h2>
 
 <%= form_for @beer do |b| %>
@@ -97,4 +98,5 @@
 	<div>
 	<%= b.submit %>
 	</div>
+<% end %>
 <% end %>

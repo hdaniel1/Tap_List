@@ -3,19 +3,20 @@ class BeersController < ApplicationController
 	before_action :find_beer, only: [:show, :edit, :update]
 
 	def index
+
 		if params[:beer_tag_description]
 			@tag_desc = params[:beer_tag_description]
 			@tags = Tag.all.select {|tag| tag.description == params[:beer_tag_description]}
 			@beers = []
-			@tags.each do |tag| 
-				tag.beers.each do |beer| 
-					@beers << beer 
-				end 
-			end 
+			@tags.each do |tag|
+				tag.beers.each do |beer|
+					@beers << beer
+				end
+			end
 			@beers
-		else 
+		else
 			@beers = Beer.all
-		end 
+		end
 	end
 
 	def show

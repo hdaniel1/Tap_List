@@ -29,3 +29,9 @@
 <div>
 <%= link_to "Browse Beer Selection", beers_path %>
 </div>
+
+<% if get_current_user.is_retailer && !Retailer.where(user_id: get_current_user.id) %>
+<h2> Create Retailer Listing </h2>
+<%= render "retailers/retailer" %>
+
+<% end %>
