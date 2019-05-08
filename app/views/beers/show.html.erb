@@ -15,7 +15,7 @@
 <h2>Tags associated with this beer</h2>
 <ul>
 	<% @beer.tags.each do |tag| %>
-		<li><%= tag.description %></li>
+		<li><%= link_to tag.description, beers_path(beer_tag_description: tag.description) %></li>
 	<% end %>
 </ul>
 <div>
