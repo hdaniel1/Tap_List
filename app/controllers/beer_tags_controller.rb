@@ -1,5 +1,5 @@
 class BeerTagsController < ApplicationController
-
+	before_action :authorized
 	def new
 		@beer_tag = BeerTag.new 
 	end 

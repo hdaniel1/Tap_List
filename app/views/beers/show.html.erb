@@ -38,7 +38,7 @@ Description:
 	<% end %>
 </ul>
 
-<% if get_current_user.is_retailer %>
+<% if get_current_user.user_type == "Retailer" %>
 <h2>Add this beer to my tap list</h2>
 
 <%= form_for @retailerbeer do |rb|

@@ -4,8 +4,8 @@
 -Brewery Show Page (Edit / Add new beer)
 -Retailer Show Page (Edit)
 -Beer Show Page (Edit for Breweries, Add to Tap for retailers)
-4. Brewery users to claim non-owned breweries. 
-5. Anybody can edit a brewery unless it is claimed
+<!-- 4. Brewery users to claim non-owned breweries.  -->
+<!-- 5. Anybody can edit a brewery unless it is claimed -->
 6. Error messages
 <!-- 7. Add Tags model
 8. Associate tags with beers (N:N), allow users to add tags to beers.  -->
@@ -14,6 +14,8 @@
 11. Tag Cloud?
 12. Unfavorite a beer
 13. Search by beer tag or name
+14. Add my notes to a favorited beer
+<!-- 14. Change user account creation buttons to radio buttons -->
 
 Brewers
 retailers

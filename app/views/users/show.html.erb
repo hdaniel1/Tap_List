@@ -30,12 +30,12 @@
 <%= link_to "Browse Beer Selection", beers_path %>
 </div>
 
-<% if get_current_user.is_retailer && Retailer.where(user_id: get_current_user.id).empty? %>
+<% if get_current_user.user_type == "Retailer" && Retailer.where(user_id: get_current_user.id).empty? %>
 <h2> Create Retailer Listing </h2>
 <%= render "retailers/retailer" %>
 <% end %>
 
-<% if get_current_user.is_brewery && Brewery.where(user_id: get_current_user.id).empty? %>
+<% if get_current_user.user_type == "Brewery" && Brewery.where(user_id: get_current_user.id).empty? %>
 <h2> Create a Brewing Company </h2>
 <%= render "breweries/brewery" %>
 

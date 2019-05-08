@@ -1,14 +1,13 @@
 class UsersController < ApplicationController
-
 	# layout "login"
 	before_action :find_user, only: [:show, :edit, :update]
 
 	def show
 		@retaileruser = User.new
-		if get_current_user.is_retailer
+		if get_current_user.user_type == "Retailer"
 			@retailer = Retailer.new
 		end
-		if get_current_user.is_brewery
+		if get_current_user.user_type == "Brewery"
 			@unclaimed_breweries = Brewery.where(user_id: nil)
 			@brewery = Brewery.new
 		end
@@ -25,15 +24,14 @@ class UsersController < ApplicationController
 
 
 	def create
-
+		byebug
 		@user = User.new(user_params)
-
-    if @user.valid?
-        @user.save
-        session[:user_id] = @user.id
-				redirect_to user_path(@user)
+		if @user.valid?
+	        @user.save
+	        session[:user_id] = @user.id
+			redirect_to user_path(@user)
 		else
-				render :new
+			render :new
 		end
 	end
 

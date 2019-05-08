@@ -9,20 +9,11 @@
 	</div>
 	<div>
 	<%= u.label "Please type a Password" %>
-	<%= u.password_field :password %>
+	<%= u.password_field :password  %>
 	</div>
 	<div>
 	<%= u.label "Are you a Brewery?" %>
-	<%= u.check_box :is_brewery %>
-	</div>
-	<div>
-	<%= u.label "Are you a Retailer?" %>
-	<%= u.check_box :is_retailer %>
-	</div>
-	<div>
-	<%= u.label "Are you a Customer?" %>
-	<%= u.check_box :is_customer %>
-	</div>
+	<%= u.select :user_type, options_for_select(User.user_types), prompt: "What kind of User are you?"  %>
 	<div>
 	<%= u.submit%>
 	</div>

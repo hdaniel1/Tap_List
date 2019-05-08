@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_08_152439) do
+ActiveRecord::Schema.define(version: 2019_05_08_214536) do
 
   create_table "beer_tags", force: :cascade do |t|
     t.integer "beer_id"
@@ -84,9 +84,7 @@ ActiveRecord::Schema.define(version: 2019_05_08_152439) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.boolean "is_retailer"
-    t.boolean "is_brewery"
-    t.boolean "is_customer"
+    t.string "user_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"

@@ -1,5 +1,6 @@
 class FavoriteBeersController < ApplicationController
 	before_action :find_fave_beer
+	before_action :authorized
 	def show
 
 	end 

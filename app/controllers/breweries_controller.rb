@@ -1,7 +1,6 @@
 class BreweriesController < ApplicationController
-
 	# layout "brewery"
-
+	before_action :authorized
 	before_action :find_brewery, only: [:show, :edit, :update]
 
 	def index

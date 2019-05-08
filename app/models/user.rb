@@ -4,8 +4,14 @@ class User < ApplicationRecord
 	has_one :brewery
 	has_one :retailer
 	validates :username, presence: true, uniqueness: [case_sensitive: false]
+	validates :password_digest, presence: true
+	validates :user_type, presence: true
 	accepts_nested_attributes_for :brewery
 	has_secure_password
+
+	def self.user_types
+		["Brewery", "Retailer", "Customer"]
+	end 
 
 	# def password=(new_password)
 	# 	salt = BCrypt::Engine::generate_salt

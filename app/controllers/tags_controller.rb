@@ -1,5 +1,5 @@
 class TagsController < ApplicationController
-
+	before_action :authorized
 	def new
 		@tag = Tag.new 
 	end 

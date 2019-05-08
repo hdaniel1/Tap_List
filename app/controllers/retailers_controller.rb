@@ -1,5 +1,5 @@
 class RetailersController < ApplicationController
-
+	before_action :authorized
 	before_action :find_retailer, only: [:show, :edit, :update]
 	def index
 		@retailers = Retailer.all
