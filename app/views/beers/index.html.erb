@@ -1,5 +1,8 @@
 <h1> List of Beers </h1>
 
+<% if @tag_desc %>
+	<h2>Beers with a <%=@tag_desc %> tag</h2>
+<% end %>
 <ul>
 <% @beers.each do |beer| %>
 	<li><%= link_to beer.name, beer_path(beer) %></li>

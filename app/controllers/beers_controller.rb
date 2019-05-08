@@ -4,6 +4,7 @@ class BeersController < ApplicationController
 
 	def index
 		if params[:beer_tag_description]
+			@tag_desc = params[:beer_tag_description]
 			@tags = Tag.all.select {|tag| tag.description == params[:beer_tag_description]}
 			@beers = []
 			@tags.each do |tag| 
