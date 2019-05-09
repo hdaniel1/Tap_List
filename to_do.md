@@ -9,18 +9,11 @@
 <!-- 6. Error messages -->
 <!-- 7. Add Tags model
 8. Associate tags with beers (N:N), allow users to add tags to beers.  -->
-9. Validations
+<!-- 9. Validations -->
 10. Styling
 11. Tag Cloud?
 12. Unfavorite a beer
 13. Search by beer tag or name
+14. 21 and up notice
 <!-- 14. Add my notes to a favorited beer -->
 <!-- 14. Change user account creation buttons to radio buttons -->
-
-Brewers
-retailers
-ordinary 
-
-brewers - log in, edit brewery, add a new brew
-retailers - login, edit retailer, browse breweries/ beers, add a beer to tap list, retailer can create their own beers
-customers - log in, favorite, 

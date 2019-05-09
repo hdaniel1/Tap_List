@@ -44,7 +44,6 @@ class BeersController < ApplicationController
 
 		elsif params["beer"]["brewery_attributes"]["name"] == ""
 			@beer = Beer.new(beer_params_with_existing_brewery)
-			
 			if @beer.valid?
 				@beer.save
 				@retailer = Retailer.find(params[:beer][:retailer_id])
@@ -56,6 +55,7 @@ class BeersController < ApplicationController
 
 		else
 			@beer = Beer.create(beer_params_with_new_brewery)
+
 			if @beer.valid?
 				@retailer = Retailer.find(params[:beer][:retailer_id])
 				redirect_to retailer_path(@retailer)
@@ -91,11 +91,23 @@ class BeersController < ApplicationController
 	end
 
 	def beer_params_with_existing_brewery
-		params.require(:beer).permit(:name, :style, :ABV, :IBU, :description, :available, :price, :availability, :on_site_purchase, :glass_size, :image, :brewery_id, :retailer_id, retailer_beer_ids: [], retailer_beer_attributes:[:number_of_barrels, :glass_size, :retailer_price])
+		params.require(:beer).permit(:name, 
+									 :style, 
+									 :ABV, 
+									 :IBU, 
+									 :description, 
+									 :brewery_id, 
+									 :retailer_id, 
+									 retailer_beers_attributes:
+									 	[:number_of_barrels, 
+									 	 :glass_size, 
+									 	 :retailer_price, 
+									 	 :retailer_id, 
+									 	 :available])
 	end
 
 	def beer_params_with_new_brewery
-		params.require(:beer).permit(:name, :style, :ABV, :IBU, :description, :retailer_id, retailer_beer_ids: [], brewery_attributes: [:name, :city, :state, :description, :established, :website], retailer_beer_attributes:[:number_of_barrels, :glass_size, :retailer_price])
+		params.require(:beer).permit(:name, :style, :ABV, :IBU, :description, :retailer_id, brewery_attributes: [:name, :city, :state, :description, :established, :website], retailer_beers_attributes:[:number_of_barrels, :glass_size, :retailer_price, :retailer_id, :available])
 	end
 
 	def beer_params_without_retailer

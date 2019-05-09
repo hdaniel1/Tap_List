@@ -15,7 +15,7 @@
 <% end %>
 
 <%#add all beers on tap list for customers to see below%>
-<h2> See Available Beers </h2>
+<h2> Beers on Tap </h2>
 <ol>
 	<% @retailer.get_available_beers.each do |b| %>
 		<li><%= link_to b.beer.name, beer_path(b.beer) %> <% if user_owns_retailer %> - <%=link_to "Edit Details", edit_retailer_beer_path(b) %> <%end%></li>
@@ -27,6 +27,7 @@
 			</ul>
 		<% end %>
 </ol>
+
 
 <% if user_owns_retailer %>
 <h2>Add a new offering</h2>
@@ -106,6 +107,10 @@
 		<%= rb.label "Number of Barrels" %>
 		<%= rb.number_field :number_of_barrels %>
 		<div>
+		<div>
+		<%= rb.label "Available?" %>
+		<%= rb.select :available, [['Yes', true], ['No', false]] %>
+		</div>
 			<% end %>
 	<%= b.submit %>
 	</div>

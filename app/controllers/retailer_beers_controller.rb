@@ -6,7 +6,7 @@ class RetailerBeersController < ApplicationController
 
 	def create
 		@retailerbeer = RetailerBeer.create(retailerbeer_params)
-		redirect_to retailer_path(@retailerbeer.retailer)
+		redirect_to retailer_path(@retailerbeer.retailer.id)
 	end
 
 	def edit

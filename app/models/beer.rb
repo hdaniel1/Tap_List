@@ -1,6 +1,5 @@
 class Beer < ApplicationRecord
 	belongs_to :brewery
-	belongs_to :retailer, optional: true
 	has_many :retailer_beers
 	has_many :retailers, through: :retailer_beers
 	has_many :favorite_beers
