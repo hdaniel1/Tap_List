@@ -37,7 +37,9 @@ class UsersController < ApplicationController
 
 
 	def edit
-
+		if get_current_user.id != @user.id 
+			redirect_to user_path(@user)
+		end
 	end
 
 	def update

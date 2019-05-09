@@ -38,7 +38,7 @@ class BeersController < ApplicationController
 				@beer.save
 				redirect_to beer_path(@beer)
 			else
-				render :new 
+				render "retailers/show" 
 			end 
 		elsif params["beer"]["brewery_attributes"]["name"] == ""
 			@beer = Beer.new(beer_params_with_existing_brewery)
@@ -47,7 +47,8 @@ class BeersController < ApplicationController
 				create_retailerbeer
 				redirect_to beer_path(@beer)
 			else 
-				render :new 
+				 @retailer = Retailer.find(params[:beer][:retailer_id])
+ 				 render "retailers/show"
 			end 
 		else
 			@beer = Beer.create(beer_params_with_new_brewery)

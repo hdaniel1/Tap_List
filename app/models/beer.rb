@@ -7,7 +7,7 @@ class Beer < ApplicationRecord
 	has_many :users, through: :favorite_beers
 	has_many :beer_tags
 	has_many :tags, through: :beer_tags
-	validates :IBU, inclusion: {in: 0..120}, allow_nil: true
+	validates :IBU, inclusion: {in: 0..120, message: "must be within 0 and 120"}, allow_nil: true
 	accepts_nested_attributes_for :retailer_beers
 	accepts_nested_attributes_for :brewery
 	accepts_nested_attributes_for :tags

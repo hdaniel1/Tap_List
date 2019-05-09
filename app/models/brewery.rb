@@ -6,4 +6,8 @@ class Brewery < ApplicationRecord
 		self.beers.where(available:true)
 	end
 
+	def get_unavailable_beers
+		self.beers.where(available: false)
+	end
+
 end

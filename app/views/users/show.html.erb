@@ -5,10 +5,11 @@
 	<li>Username: <%= @user.username %></li>
 </ul>
 
-
+<% if get_current_user.id == @user.id %>
 <%= link_to "Edit Profile", edit_user_path(@user) %>
+<% end %>
 
-<% if @user.brewery %>
+<% if get_current_user.brewery %>
 	<div>
 		<%= link_to "Manage #{@user.brewery.name}", brewery_path(@user.brewery) %>
 	</div>

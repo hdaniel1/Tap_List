@@ -5,6 +5,6 @@ module BeersHelper
 	end
 
 	def retailer_doesnt_offer_beer
-		get_current_user.user_type == "Retailer" && !get_current_user.retailer.beers.include?(@beer)
+		get_current_user.user_type == "Retailer" && !get_current_user.retailer.retailer_beers.none do |retailer_beer| retailer_beer.beer.id == @beer.id end
 	end
 end
