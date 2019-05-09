@@ -16,7 +16,7 @@
 	</div>
 	<div>
 	<%= r.label "Your State" %>
-	<%= r.select :state, options_for_select(Retailer.us_states) %>
+	<%= r.select :state, options_for_select(Retailer.us_states), prompt: "Select" %>
 	</div>
 	<div>
 	<%= r.submit %>

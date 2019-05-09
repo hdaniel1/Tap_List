@@ -32,6 +32,7 @@ class BeersController < ApplicationController
 
 
 	def create
+
 		if params["beer"]["retailer_id"] == nil && params["beer"]["brewery_attributes"] == nil
 			@beer = Beer.new(beer_params_without_retailer)
 			if @beer.valid?
@@ -40,9 +41,10 @@ class BeersController < ApplicationController
 			else
 				render "retailers/show"
 			end
+
 		elsif params["beer"]["brewery_attributes"]["name"] == ""
 			@beer = Beer.new(beer_params_with_existing_brewery)
-			byebug
+			
 			if @beer.valid?
 				@beer.save
 				@retailer = Retailer.find(params[:beer][:retailer_id])
@@ -51,6 +53,7 @@ class BeersController < ApplicationController
 				 @retailer = Retailer.find(params[:beer][:retailer_id])
  				 render "retailers/show"
 			end
+
 		else
 			@beer = Beer.create(beer_params_with_new_brewery)
 			if @beer.valid?

@@ -1,6 +1,7 @@
 class RetailerBeersController < ApplicationController
 
 	def new
+		@retailerbeer = RetailerBeer.new
 	end
 
 	def create
