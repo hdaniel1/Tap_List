@@ -34,7 +34,7 @@ class Beer < ApplicationRecord
 		["Pale Ales",
 				["American Amber / Red Ale", "American Blonde Ale", "American Pale Ale (APA)", "Belgian Blonde Ale", "Belgian Pale Ale", "Belgian Saison", "English Bitter", "English Extra Special / Strong Bitter (ESB)", "English Pale Ale", "English Pale Mild Ale", "French Bière de Garde", "German Kölsch", "Irish Red Ale"]],
 		["Pilseners and Pale Lagers",
-				["American Adjunct Lager", "American Imperial Pilsner", "American Lager", "American Light Lager", "American Malt Liquor", "Bohemian Pilsener", "European Export / Dortmunder", "European Pale Lager", "European Strong Lager", "German Helles", "German Kellerbier / Zwickelbier", "German Pilsner"]],
+				["American Adjunct Lager", "American Imperial Pilsner", "American Lager", "American Light Lager", "American Malt Liquor", "Bohemian Pilsener", "European Export / Dortmunder", "European Pale Lager", "European Strong Lager", "German Helles", "German Kellerbier / Zwickelbier", "German Pilsner", "Pilsner"]],
 		["Porters",
 				["American Imperial Porter", "American Porter", "Baltic Porter", "English Porter", "Robust Porter", "Smoke Porter"]],
 		["Specialty Beers",

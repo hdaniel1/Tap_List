@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :retailers
   resources :beers
   resources :breweries
-  resources :retailer_beers, only:[:new, :create]
+  resources :retailer_beers, only:[:new, :create, :edit, :update]
 
 
   get '/login', to: "sessions#new", as: "login"

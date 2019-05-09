@@ -38,26 +38,27 @@ class BeersController < ApplicationController
 				@beer.save
 				redirect_to beer_path(@beer)
 			else
-				render "retailers/show" 
-			end 
+				render "retailers/show"
+			end
 		elsif params["beer"]["brewery_attributes"]["name"] == ""
 			@beer = Beer.new(beer_params_with_existing_brewery)
+			byebug
 			if @beer.valid?
 				@beer.save
-				create_retailerbeer
-				redirect_to beer_path(@beer)
-			else 
+				@retailer = Retailer.find(params[:beer][:retailer_id])
+				redirect_to retailer_path(@retailer)
+			else
 				 @retailer = Retailer.find(params[:beer][:retailer_id])
  				 render "retailers/show"
-			end 
+			end
 		else
 			@beer = Beer.create(beer_params_with_new_brewery)
 			if @beer.valid?
-				create_retailerbeer
-				redirect_to beer_path(@beer)
+				@retailer = Retailer.find(params[:beer][:retailer_id])
+				redirect_to retailer_path(@retailer)
 			else
-				render :new 
-			end 
+				render :new
+			end
 		end
 	end
 
@@ -69,33 +70,33 @@ class BeersController < ApplicationController
 		if @beer.valid?
 			redirect_to beer_path(@beer)
 		else
-			render :edit 
-		end 
+			render :edit
+		end
 	end
+
+	# def new_retailerbeer
+	# 	RetailerBeer.new(beer_id: @beer.id,
+	# 							retailer_id: params["beer"]["retailer_id"],
+	# 							glass_size: params["beer"]["glass_size"],
+	# 							retailer_price: params["beer"]["price"]  )
+	# end
 
 	private
-
-	def create_retailerbeer
-		RetailerBeer.create(beer_id: @beer.id,
-								retailer_id: params["beer"]["retailer_id"],
-								glass_size: params["beer"]["glass_size"],
-								retailer_price: params["beer"]["price"]  )
-	end
 
 	def find_beer
 		@beer = Beer.find(params[:id])
 	end
 
 	def beer_params_with_existing_brewery
-		params.require(:beer).permit(:name, :style, :ABV, :IBU, :description, :available, :price, :availability, :on_site_purchase, :glass_size, :image, :brewery_id, :retailer_id)
+		params.require(:beer).permit(:name, :style, :ABV, :IBU, :description, :available, :price, :availability, :on_site_purchase, :glass_size, :image, :brewery_id, :retailer_id, retailer_beer_ids: [], retailer_beer_attributes:[:number_of_barrels, :glass_size, :retailer_price])
 	end
 
 	def beer_params_with_new_brewery
-		params.require(:beer).permit(:name, :style, :ABV, :IBU, :description, :available, :price, :availability, :on_site_purchase, :glass_size, :image, :retailer_id, brewery_attributes: [:name, :city, :state, :description, :established, :website])
+		params.require(:beer).permit(:name, :style, :ABV, :IBU, :description, :retailer_id, retailer_beer_ids: [], brewery_attributes: [:name, :city, :state, :description, :established, :website], retailer_beer_attributes:[:number_of_barrels, :glass_size, :retailer_price])
 	end
 
 	def beer_params_without_retailer
-		params.require(:beer).permit(:name, :style, :ABV, :IBU, :description, :available, :price, :availability, :on_site_purchase, :glass_size, :image, :brewery_id)
+		params.require(:beer).permit(:name, :style, :ABV, :IBU, :description, :retailer_price, :brewery_id)
 	end
 
 end

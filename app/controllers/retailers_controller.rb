@@ -6,6 +6,7 @@ class RetailersController < ApplicationController
 	end
 
 	def show
+		@retailerbeer = RetailerBeer.new
 		@breweries = Brewery.all
 		@beer = Beer.new
 	end
@@ -14,13 +15,13 @@ class RetailersController < ApplicationController
 		@retailer = Retailer.new
 	end
 
-	def create 
+	def create
 		@retailer = Retailer.create(retailer_params)
 		if @retailer.valid?
 			redirect_to retailer_path(@retailer)
 		else
-			render :new 
-		end 
+			render :new
+		end
 	end
 
 	def edit
@@ -32,8 +33,8 @@ class RetailersController < ApplicationController
 		if @retailer.valid?
 			redirect_to retailer_path(@retailer)
 		else
-			render :edit 
-		end 
+			render :edit
+		end
 	end
 
 	private

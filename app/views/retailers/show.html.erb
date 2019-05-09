@@ -18,11 +18,12 @@
 <h2> See Available Beers </h2>
 <ol>
 	<% @retailer.get_available_beers.each do |b| %>
-		<li><%= link_to b.beer.name, beer_path(b.beer) %></li>
+		<li><%= link_to b.beer.name, beer_path(b.beer) %> <% if user_owns_retailer %> - <%=link_to "Edit Details", edit_retailer_beer_path(b) %> <%end%></li>
 			<ul>
 				<li><%= b.beer.style %> </li>
 				<li> <%= b.beer.ABV %>% </li>
-				<li>$<%= number_with_precision(b.retailer_price, precision: 2) %> per <%= b.glass_size %> oz bottle</li>
+				<li>$<%= number_with_precision(b.retailer_price, precision: 2) %> per <%= b.glass_size %> oz pour </li>
+				<li> <%= b.number_of_barrels %> barrels in stock </li>
 			</ul>
 		<% end %>
 </ol>
@@ -88,26 +89,24 @@
 	<%= b.number_field :IBU %>
 	</div>
 	<div>
-	<%= b.label "Available?" %>
-	<%= b.select :available, [['Yes', true], ['No', false]] %>
-	</div>
-	<div>
-	<%= b.label "Price" %>
-	<%= b.number_field :price, step: :any %>
-	</div>
-	<div>
-	<%= b.label "On Site Purchase?" %>
-	<%= b.select :on_site_purchase, [['Yes', true], ['No', false]] %>
-	</div>
-	<div>
-	<%= b.label "Glass Size (in ounces)" %>
-	<%= b.select :glass_size, options_for_select(Beer.beer_glass_sizes), prompt: "Select a Glass Size" %>
-	</div>
-	<div>
 	<%= b.label "Description" %>
 	<%= b.text_area :description %>
 	</div>
-	<div>
+	<%= b.fields_for :retailer_beers, @beer.retailer_beers.build do |rb| %>
+		<%= rb.hidden_field :retailer_id, value: @retailer.id %>
+		<div>
+		<%= rb.label "Your Glass Size" %>
+		<%= rb.select :glass_size, options_for_select(Beer.beer_glass_sizes), prompt: "Select a Glass Size" %>
+		</div>
+		<div>
+		<%= rb.label "Your Price" %>
+		<%= rb.number_field :retailer_price, step: :any %>
+		</div>
+		<div>
+		<%= rb.label "Number of Barrels" %>
+		<%= rb.number_field :number_of_barrels %>
+		<div>
+			<% end %>
 	<%= b.submit %>
 	</div>
 <% end %>
