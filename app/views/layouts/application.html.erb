@@ -4,12 +4,13 @@
     <title>TapListApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag 'http://www.csszengarden.com/examples/style.css' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="<%= yield (:body_class) %>">
+    <div class="topnav"
     <% if session["user_id"] %>
       <div>Welcome <%= get_current_user.username %></div>
       <div>
@@ -19,7 +20,9 @@
       <%= link_to "Home Page", user_path(get_current_user) %>
       </div>
     <% end %>
-    
+    </div>
     <%= yield %>
   </body>
+
+
 </html>

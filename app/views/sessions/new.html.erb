@@ -1,18 +1,29 @@
-<h1>Login</h1>
+<% content_for :body_class, "login_page" %>
+<div class = "login_block">
+<h1 class="center_element">Login</h1>
 
 <% if flash["notice"] %>
-    <div class="error"><%= flash["notice"] %></div>
+<div class="error"><%= flash["notice"] %></div>
 
 <% end %>
 
 <%= form_for "/login" do %>
+    <br>
+    <div class="center_element">
     <%= label :username, "Username" %>
     <%= text_field_tag :username %>
+    </br>
+    <br>
     <%= label :password, "Password" %>
     <%= password_field_tag :password %>
+    </br>
+    <br>
     <%= submit_tag "Login" %>
+    </br>
 <% end %>
-<br>
-<div>
-<%= link_to "Don't have an account? Click here to create one", new_user_path %>
+</div>
+<div id="new_account">
+<br>Don't have an account?</br>
+<%= link_to "Click here to create one", new_user_path %>
+</div>
 </div>
