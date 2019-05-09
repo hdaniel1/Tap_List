@@ -5,7 +5,7 @@
 	<li><%= @retailer.state %></li>
 </ul>
 
-<% if get_current_user.is_retailer && @retailer.user_id == get_current_user.id %>
+<% if user_owns_retailer %>
 <div>
 <%=link_to "Edit this Retailer", edit_retailer_path(@retailer) %>
 </div>
@@ -27,7 +27,7 @@
 		<% end %>
 </ul>
 
-<% if get_current_user.is_retailer && @retailer.user_id == get_current_user.id %>
+<% if user_owns_retailer %>
 <h2>Add a new offering</h2>
 
 <%= form_for @beer do |b| %>
@@ -94,6 +94,10 @@
 	<div>
 	<%= b.label "Glass Size (in ounces)" %>
 	<%= b.select :glass_size, options_for_select(Beer.beer_glass_sizes), prompt: "Select a Glass Size" %>
+	</div>
+	<div>
+	<%= b.label "Description" %>
+	<%= b.text_area :description %>
 	</div>
 	<div>
 	<%= b.submit %>

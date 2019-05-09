@@ -34,25 +34,42 @@ class BeersController < ApplicationController
 	def create
 		if params["beer"]["retailer_id"] == nil && params["beer"]["brewery_attributes"] == nil
 			@beer = Beer.new(beer_params_without_retailer)
-			@beer.save
+			if @beer.valid?
+				@beer.save
+				redirect_to beer_path(@beer)
+			else
+				render :new 
+			end 
 		elsif params["beer"]["brewery_attributes"]["name"] == ""
 			@beer = Beer.new(beer_params_with_existing_brewery)
-			byebug
-			@beer.save
-			create_retailerbeer
+			if @beer.valid?
+				@beer.save
+				create_retailerbeer
+				redirect_to beer_path(@beer)
+			else 
+				render :new 
+			end 
 		else
 			@beer = Beer.create(beer_params_with_new_brewery)
-			create_retailerbeer
+			if @beer.valid?
+				create_retailerbeer
+				redirect_to beer_path(@beer)
+			else
+				render :new 
+			end 
 		end
-			redirect_to beer_path(@beer)
 	end
 
 	def edit
 	end
 
 	def update
-		@beer.update(beer_params)
-		redirect_to beer_path(@beer)
+		@beer.update(beer_params_without_retailer)
+		if @beer.valid?
+			redirect_to beer_path(@beer)
+		else
+			render :edit 
+		end 
 	end
 
 	private
@@ -63,6 +80,7 @@ class BeersController < ApplicationController
 								glass_size: params["beer"]["glass_size"],
 								retailer_price: params["beer"]["price"]  )
 	end
+
 	def find_beer
 		@beer = Beer.find(params[:id])
 	end
@@ -78,6 +96,5 @@ class BeersController < ApplicationController
 	def beer_params_without_retailer
 		params.require(:beer).permit(:name, :style, :ABV, :IBU, :description, :available, :price, :availability, :on_site_purchase, :glass_size, :image, :brewery_id)
 	end
-
 
 end

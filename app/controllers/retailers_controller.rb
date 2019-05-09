@@ -16,7 +16,11 @@ class RetailersController < ApplicationController
 
 	def create 
 		@retailer = Retailer.create(retailer_params)
-		redirect_to retailer_path(@retailer)
+		if @retailer.valid?
+			redirect_to retailer_path(@retailer)
+		else
+			render :new 
+		end 
 	end
 
 	def edit
@@ -25,7 +29,11 @@ class RetailersController < ApplicationController
 
 	def update
 		@retailer.update(retailer_params)
-		redirect_to retailer_path(@retailer)
+		if @retailer.valid?
+			redirect_to retailer_path(@retailer)
+		else
+			render :edit 
+		end 
 	end
 
 	private

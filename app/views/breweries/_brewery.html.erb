@@ -1,5 +1,11 @@
+<% if @brewery.errors %>
+	<% @brewery.errors.full_messages.each do |message| %>
+		<li><%= message %></li>
+	<% end %>
+<% end %>
+
 <%=form_for @brewery do |b| %>
-	<%= b.hidden_field :user_id, value: @user.id %>
+	<%= b.hidden_field :user_id, value: get_current_user.id %>
 	<div>
 	<%= b.label "Brewery Name" %>
 	<%=	b.text_field :name %>

@@ -38,6 +38,10 @@
 	<%= b.select :glass_size, options_for_select(Beer.beer_glass_sizes), prompt: "Select a Glass Size" %>
 	</div>
 	<div>
+	<%= b.label "Description" %>
+	<%= b.text_area :description %>
+	</div>
+	<div>
 	<%= b.submit %>
 	</div>
 <% end %>

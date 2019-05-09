@@ -1,3 +1,9 @@
+<% if @user.errors %>
+	<% @user.errors.full_messages.each do |message| %>
+		<li><%= message %></li>
+	<% end %>
+<% end %>
+
 <%=form_for @user do |u| %>
 	<div>
 	<%= u.label "What is your name?" %>
@@ -11,10 +17,12 @@
 	<%= u.label "Please type a Password" %>
 	<%= u.password_field :password  %>
 	</div>
-	<div>
-	<%= u.label "Are you a Brewery?" %>
-	<%= u.select :user_type, options_for_select(User.user_types), prompt: "What kind of User are you?"  %>
-	<div>
+	<%if @user.user_type == nil %>
+		<div>
+		<%= u.label "What kind of User Are You?" %>
+		<%= u.select :user_type, options_for_select(User.user_types), prompt: "Please Choose"  %>
+		<div>
+	<% end %>
 	<%= u.submit%>
 	</div>
 <% end %>

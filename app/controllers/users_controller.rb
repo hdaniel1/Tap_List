@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
 	def show
 		@retaileruser = User.new
+		
 		if get_current_user.user_type == "Retailer"
 			@retailer = Retailer.new
 		end
@@ -24,7 +25,6 @@ class UsersController < ApplicationController
 
 
 	def create
-		byebug
 		@user = User.new(user_params)
 		if @user.valid?
 	        @user.save
@@ -42,7 +42,11 @@ class UsersController < ApplicationController
 
 	def update
 		@user.update(user_params)
-		redirect_to user_path(@user)
+		if @user.valid?
+			redirect_to user_path(@user)
+		else
+			render :new 
+		end 
 	end
 
 	private

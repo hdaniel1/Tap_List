@@ -4,13 +4,24 @@
 	<li>Style: <%= @beer.style %></li>
 	<li>ABV: <%= number_with_precision(@beer.ABV, precision:2) %></li>
 	<li>IBU: <%= number_with_precision(@beer.IBU, precision:2) %></li>
-	<li>Price: <%= number_with_precision(@beer.price, precision:2) %></li>
-	<li>Available?: <%= @beer.available %></li>
+	<li>Price: $<%= number_with_precision(@beer.price, precision:2) %></li>
+	<li>Available? <%= @beer.available %></li>
 	<li>Availability: <%= @beer.availability %></li>
-	<li>On Site Purchase?: <%= @beer.on_site_purchase %></li>
-	<li>Glass Size: <%= @beer.glass_size %></li>
+	<li>On Site Purchase? <%= @beer.on_site_purchase %></li>
+	<li>Glass Size: <%= @beer.glass_size %> oz</li>
 	<li>Brewery: <%= link_to @beer.brewery.name, brewery_path(@beer.brewery) %></li>
 </ul>
+
+<div>
+Description:
+<%= @beer.description %>
+</div>
+
+<% if user_owns_brewery %>
+	<div>
+	<%= link_to "Edit this Beer", edit_beer_path(@beer) %>
+	</div>
+<% end %>
 
 <h2>Tags associated with this beer</h2>
 <ul>
@@ -18,18 +29,8 @@
 		<li><%= link_to tag.description, beers_path(beer_tag_description: tag.description) %></li>
 	<% end %>
 </ul>
-<div>
-Description:
-<%= @beer.description %>
-</div>
 
-<div>
-<%= link_to "Edit this Beer", edit_beer_path(@beer) %>
-</div>
-<div>
-<%= link_to "Beer List", beers_path %>
-</div>
-
+<% if !@beer.retailers.empty? %>
 <h2>Retailers Offering This Beer</h2>
 
 <ul>
@@ -37,8 +38,9 @@ Description:
 		<li><%= link_to retailer.name, retailer_path(retailer) %></li>
 	<% end %>
 </ul>
+<% end %>
 
-<% if get_current_user.user_type == "Retailer" %>
+<% if retailer_doesnt_offer_beer %>
 <h2>Add this beer to my tap list</h2>
 
 <%= form_for @retailerbeer do |rb|
@@ -61,26 +63,31 @@ Description:
 <% end %>
 <% end %>
 
-<% if FavoriteBeer.find_by(user_id: get_current_user.id, beer_id: @beer.id) %>
-		<h2>You already favorited this beer!</h2>
+<% if my_favorite_beer %>
+		Here's what you think:<br>
+		<h3>"<%= my_favorite_beer.review %>"</h3>
 	<% else %>
 		<h2>Favorite this Beer</h2>
 		<%= form_for @favorite_beer do |f| %>
 			<%= f.hidden_field :beer_id, value: @beer.id %>
 			<%= f.hidden_field :user_id, value: get_current_user.id %>
+			<div>
+			<%=	f.label "Add Your Thoughts" %><br>
+			<%= f.text_area :review %>
+			</div>
 			<%= f.submit "Favorite" %>
 		<% end %>
 	<% end %>
 
-<h2>Add a Tag to this Beer </h2>
+<h4>Add a Tag to this Beer </h4>
 <%= form_for @beer_tag do |bt| %>
 	<%= bt.collection_select :tag_id, Tag.all, :id, :description, prompt: "Choose an Existing Tag"%>
 	<%= bt.hidden_field :beer_id, value: @beer.id %>
 	<%= bt.submit "Add Tag" %>
 	<% end %>
-<h3>OR</h3>
+<h4>OR</h4>
 
-<h2>Create a new tag:</h2>
+<h4>Create a new tag:</h4>
 <div>
 <%= form_for @tag do |t| %>
 	<%= hidden_field_tag 'beer_id', @beer.id %>
@@ -88,4 +95,8 @@ Description:
 	<%= t.text_field :description %>
 	<%= t.submit "Add Tag" %>
 <% end %>
+</div><br>
+
+<div>
+<%= link_to "Back to Beer List", beers_path %>
 </div>

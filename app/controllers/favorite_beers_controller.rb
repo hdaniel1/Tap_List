@@ -25,6 +25,6 @@ class FavoriteBeersController < ApplicationController
 	end
 	
 	def fave_beer_params
-		params.require(:favorite_beer).permit(:id, :beer_id, :user_id)
+		params.require(:favorite_beer).permit(:id, :beer_id, :user_id, :review)
 	end 
 end

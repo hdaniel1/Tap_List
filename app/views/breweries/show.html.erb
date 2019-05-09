@@ -8,9 +8,11 @@
 </ul>
 Description:<br> <%= @brewery.description %><br><br>
 <%#only show edit button if session user owns this brewery %>
-<div>
-<%= link_to "Edit #{@brewery.name}", edit_brewery_path(@brewery) %>
-</div>
+<% if belongs_to_current_user %>
+	<div>
+	<%= link_to "Edit #{@brewery.name}", edit_brewery_path(@brewery) %>
+	</div>
+<% end %>
 
 <h2>Available Beers</h2>
 <ol>
@@ -29,6 +31,7 @@ Description:<br> <%= @brewery.description %><br><br>
 
 
 <%#only show add new offering if session user is brewery owner%>
+<% if belongs_to_current_user %>
 <h2>Add a new offering</h2>
 
 <%= form_for @beer do |b| %>
@@ -63,9 +66,10 @@ Description:<br> <%= @brewery.description %><br><br>
 	</div>
 	<div>
 	<%= b.label "Glass Size (in ounces)" %>
-	<%= b.number_field :glass_size %>
+	<%= b.select :glass_size, options_for_select(Beer.beer_glass_sizes), prompt: "Select a Glass Size"  %>
 	</div>
 	<div>
 	<%= b.submit %>
 	</div>
+<% end %>
 <% end %>
