@@ -111,7 +111,7 @@ class BeersController < ApplicationController
 	end
 
 	def beer_params_without_retailer
-		params.require(:beer).permit(:name, :style, :ABV, :IBU, :description, :retailer_price, :brewery_id)
+		params.require(:beer).permit(:name, :style, :ABV, :IBU, :description, :retailer_price, :brewery_id, :image)
 	end
 
 end
