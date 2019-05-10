@@ -39,7 +39,8 @@ class BeersController < ApplicationController
 				@beer.save
 				redirect_to beer_path(@beer)
 			else
-				render "retailers/show"
+				@brewery = Brewery.find(params["beer"]["brewery_id"])
+				render "breweries/show"
 			end
 
 		elsif params["beer"]["brewery_attributes"]["name"] == ""

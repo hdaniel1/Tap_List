@@ -78,6 +78,18 @@
 html {
   box-sizing: border-box;
 }
+
+field_with_errors {
+    display: inline;
+}
+
+.field_with_errors label {
+    color: red;
+}
+
+.error {
+    color: red;
+}
 .bar {
   display: flex;
   align-items: center;

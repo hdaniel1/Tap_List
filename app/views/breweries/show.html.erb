@@ -14,25 +14,20 @@ Description:<br> <%= @brewery.description %><br><br>
 	</div>
 <% end %>
 
-<table class="table">
-	<thead>
-    <tr>
+
 <h2>Available Beers</h2>
 <ol>
-
+<div class="allbeers">
 <% @brewery.get_available_beers.each do |beer| %>
-		<th scope="col"><%= link_to beer.name, beer_path(beer) %></th>
-		
-		<ul>
+		<%= link_to beer.name, beer_path(beer) %><
+	
+
 		<%= beer.style %>
-		<li> <%= beer.ABV %>% </li>
-		<li>$<%= number_with_precision(beer.price, precision: 2) %> per <%= beer.glass_size %> oz bottle</li>
-	</ul>
+		<%= beer.ABV %>% 
+		$<%= number_with_precision(beer.price, precision: 2) %> per <%= beer.glass_size %> oz bottle
+
 <% end %>
-</ol>
-</tr>
-</thead>
-</table>
+
 </div>
 
 <% if @brewery.get_unavailable_beers %>
@@ -50,10 +45,17 @@ Description:<br> <%= @brewery.description %><br><br>
 <% end %>
 
 
-
 <%#only show add new offering if session user is brewery owner%>
 <% if belongs_to_current_user %>
 <h2>Add a new offering</h2>
+
+<div>
+<%if @beer.errors %>
+	<% @beer.errors.full_messages.each do |message| %>
+	 	<li class="error"><%= message %></li>
+	 <% end %>
+<% end %>
+</div><br>
 
 <%= form_for @beer do |b| %>
 	<%=b.hidden_field :brewery_id, value: @brewery.id %>

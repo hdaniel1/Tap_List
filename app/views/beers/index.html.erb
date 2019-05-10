@@ -1,5 +1,10 @@
 <h1> List of Beers </h1>
 
+<%= form_tag(beers_path, method: :get) do %>
+  Select a tag <%= select_tag :beer_tag_description, options_for_select(Tag.get_descriptions)%>
+  <%= submit_tag 'Search' %>
+<% end %><br>
+
 <% if @tag_desc %>
 	<h2>Beers with a <%=@tag_desc %> tag</h2>
 <% end %>

@@ -22,7 +22,7 @@
       <%= link_to "Logout", logout_path, method: "DELETE" %>
       </div>
       <div class="login_field hover" id="home_page">
-      <%= link_to "Home Page", user_path(get_current_user) %>
+      <%= link_to "My Profile", user_path(get_current_user) %>
       </div>
       <div class="login_field hover" id="beer_list">
       <%= link_to "Browse Beers", beers_path %>
