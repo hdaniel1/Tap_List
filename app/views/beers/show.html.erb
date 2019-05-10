@@ -1,5 +1,6 @@
 <h1><%= @beer.name %> Information</h1>
 
+<%= image_tag(@beer.image) if @beer.image.attached? %>
 <ul>
 	<li>Style: <%= @beer.style %></li>
 	<li>ABV: <%= number_with_precision(@beer.ABV, precision:2) %></li>
@@ -11,6 +12,13 @@
 	<li>Glass Size: <%= @beer.glass_size %> oz</li>
 	<li>Brewery: <%= link_to @beer.brewery.name, brewery_path(@beer.brewery) %></li>
 </ul>
+
+<% if !@beer.image %>
+<%= form_for @beer do |b| %>
+	<%= b.file_field :image %><br>
+	<%= b.submit "Add Image" %>
+<% end %>
+<% end %>
 
 <div>
 Description:

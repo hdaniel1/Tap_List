@@ -1,8 +1,7 @@
 <h1><%= @retailer.name%> Information</h1>
 
 <ul>
-	<li><%= @retailer.city %></li>
-	<li><%= @retailer.state %></li>
+	<li>Location: <%= @retailer.city %>, <%= @retailer.state %></li>
 </ul>
 
 <% if user_owns_retailer %>

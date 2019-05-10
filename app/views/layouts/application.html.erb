@@ -10,14 +10,17 @@
   </head>
 
   <body class="<%= yield (:body_class) %>">
-    <div class="topnav"
+    <div class="topnav">
     <% if session["user_id"] %>
-      <div>Welcome <%= get_current_user.username %></div>
-      <div>
+      <div class="login_field" id="welcome">Welcome <%= get_current_user.username %></div>
+      <div class="login_field" id="logout">
       <%= link_to "Logout", logout_path, method: "DELETE" %>
       </div>
-      <div>
+      <div class="login_field" id="home_page">
       <%= link_to "Home Page", user_path(get_current_user) %>
+      </div>
+      <div class="login_field" id="beer_list">
+      <%= link_to "Browse Beers", beers_path %>
       </div>
     <% end %>
     </div>
