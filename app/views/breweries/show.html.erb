@@ -3,59 +3,62 @@
 <ul>
 	<li>City: <%= @brewery.city %></li>
 	<li>State: <%= @brewery.state %></li>
-	<li>Website: <%= link_to @brewery.website, @brewery.website %></li>
+	<li>Website: <%= link_to @brewery.website, @brewery.website, class: "hyperlink" %></li>
 	<li>Year Established: <%= @brewery.established %></li>
 </ul>
-Description:<br> <%= @brewery.description %><br><br>
+<b>Description: </b></h3><br> <%= @brewery.description %><br><br>
 <%#only show edit button if session user owns this brewery %>
 <% if belongs_to_current_user %>
 	<div>
-	<%= link_to "Edit #{@brewery.name}", edit_brewery_path(@brewery) %>
+	<%= link_to "Edit #{@brewery.name}", edit_brewery_path(@brewery), class: "hyperlink" %>
 	</div>
 <% end %>
 
-
-<h2>Available Beers</h2>
-<ol>
+<h2>Beers on Tap</h2>
 <div class="allbeers">
 <% @brewery.get_available_beers.each do |beer| %>
-		<%= link_to beer.name, beer_path(beer) %><
-	
-
-		<%= beer.style %>
-		<%= beer.ABV %>% 
-		$<%= number_with_precision(beer.price, precision: 2) %> per <%= beer.glass_size %> oz bottle
-
-<% end %>
-
+	<div class="card" id="card" style="width: 18rem;">
+	  <%= image_tag(beer.image, class: "card-img-top") if beer.image.attached? %>
+	  <div class="card-body">
+	    <h5 class="card-title">Name: <%= link_to beer.name, beer_path(beer) %></h5>
+	    <p class="card-text">
+				Style: <%= beer.style %>
+				<p>ABV: <%= beer.ABV %>%</p>
+				<p>IBU: $<%= number_with_precision(beer.price, precision: 2) %> per <%= beer.glass_size %> oz pour</p>
+			</p>
+	    <div class="btn btn-primary"><%=link_to "Beer Info", beer_path(beer), :class => "btn"%></div>
+	  </div>
+	</div>
+<%end%>
 </div>
 
-<% if @brewery.get_unavailable_beers %>
+
 <h2>Unavailable Beers</h2>
-<ol>
+<div class="allbeers">
 <% @brewery.get_unavailable_beers.each do |beer| %>
-<li><%= link_to beer.name, beer_path(beer) %></li>
-	<ul>
-		<li><%= beer.style %> </li>
-		<li> <%= beer.ABV %>% </li>
-		<li>$<%= number_with_precision(beer.price, precision: 2) %> per <%= beer.glass_size %> oz bottle</li>
-	</ul>
-<% end %>
-</ol>
+	<div class="card " id="card" style="width: 18rem;">
+	  <%= image_tag(beer.image, class: "card-img-top") if beer.image.attached? %>
+	  <div class="card-body">
+	    <h5 class="card-title"><%= link_to beer.name, beer_path(beer) %></h5>
+	    <p class="card-text">
+				<%= beer.description %>
+				<%= beer.style %>
+				<p><%= beer.ABV %>%</p>
+			</p>
+	    <div class="btn btn-primary"><%=link_to "Beer Info", beer_path(beer), :class => "btn"%></div>
+	  </div>
+	</div>
+<%end%>
+</div>
+
+<% if @beer.errors %>
+	<% @beer.errors.full_messages.each do |message| %>
+		<li class="error"><%= message %></li>
+	<% end %>
 <% end %>
 
-
-<%#only show add new offering if session user is brewery owner%>
 <% if belongs_to_current_user %>
 <h2>Add a new offering</h2>
-
-<div>
-<%if @beer.errors %>
-	<% @beer.errors.full_messages.each do |message| %>
-	 	<li class="error"><%= message %></li>
-	 <% end %>
-<% end %>
-</div><br>
 
 <%= form_for @beer do |b| %>
 	<%=b.hidden_field :brewery_id, value: @brewery.id %>
@@ -90,6 +93,10 @@ Description:<br> <%= @brewery.description %><br><br>
 	<div>
 	<%= b.label "Glass Size (in ounces)" %>
 	<%= b.select :glass_size, options_for_select(Beer.beer_glass_sizes), prompt: "Select a Glass Size"  %>
+	</div>
+	<div>
+	<%= b.label "Image" %>
+	<%= b.file_field :image%>
 	</div>
 	<div>
 	<%= b.submit %>

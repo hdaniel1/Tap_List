@@ -6,27 +6,35 @@
 
 <% if user_owns_retailer %>
 <div>
-<%=link_to "Edit this Retailer", edit_retailer_path(@retailer) %>
+<%=link_to "Edit this Retailer", edit_retailer_path(@retailer), class: "hyperlink" %>
 </div>
 <div>
-<%= link_to "Browse Breweries", breweries_path %>
+<%= link_to "Browse Breweries", breweries_path, class: "hyperlink" %>
 </div>
 <% end %>
 
 <%#add all beers on tap list for customers to see below%>
+<% if !@retailer.get_available_beers.empty? %>
 <h2> Beers on Tap </h2>
-<ol>
+<div class="allbeers">
 	<% @retailer.get_available_beers.each do |b| %>
-		<li><%= link_to b.beer.name, beer_path(b.beer) %> <% if user_owns_retailer %> - <%=link_to "Edit Details", edit_retailer_beer_path(b) %> <%end%></li>
-			<ul>
-				<li><%= b.beer.style %> </li>
-				<li> <%= b.beer.ABV %>% </li>
-				<li>$<%= number_with_precision(b.retailer_price, precision: 2) %> per <%= b.glass_size %> oz pour </li>
-				<li> <%= b.number_of_barrels %> barrels in stock </li>
-			</ul>
-		<% end %>
+		<div class="card" id="card"style="width: 18rem;">
+	 	<%= image_tag(b.beer.image, class: "card-img-top") if b.beer.image.attached? %>
+	  	<div class="card-body">
+	    <h5 class="card-title">Name: <%= link_to b.beer.name, beer_path(b.beer) %></h5>
+	    <p class="card-text">
+				Style: <%= b.beer.style %>
+				<p>ABV: <%= b.beer.ABV %>%</p>
+				<p><%= number_with_precision(b.retailer_price, precision: 2) %> per <%= b.glass_size %> oz pour </p>
+			</p>
+	    <div class="btn btn-primary"><%=link_to "Beer Info", beer_path(b.beer), :class => "btn"%></div><br>
+	    <% if user_owns_retailer %><%=link_to "Edit Details", edit_retailer_beer_path(b) %> <%end%>
+	  </div>
+	</div>
+<% end %>
 </ol>
-
+</div>
+<% end %>
 
 <% if user_owns_retailer %>
 <h2>Add a new offering</h2>

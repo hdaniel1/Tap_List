@@ -6,30 +6,31 @@
 </ul>
 
 <% if get_current_user.id == @user.id %>
-<%= link_to "Edit Profile", edit_user_path(@user) %>
+<%= link_to "Edit Profile", edit_user_path(@user), class: "hyperlink" %>
 <% end %>
 
 <% if get_current_user.brewery %>
 	<div>
-		<%= link_to "Manage #{@user.brewery.name}", brewery_path(@user.brewery) %>
+		<%= link_to "Manage #{@user.brewery.name}", brewery_path(@user.brewery), class: "hyperlink" %>
 	</div>
 <% end %>
 
 <% if @user.retailer %>
 	<div>
-		<%= link_to "Manage #{@user.retailer.name}", retailer_path(@user.retailer) %>
+		<%= link_to "Manage #{@user.retailer.name}", retailer_path(@user.retailer), class: "hyperlink" %>
 	</div>
 <% end %>
 
-<h2>My Favorite Beers</h2>
-<ul>
-	<% @user.beers.each do |beer| %>
-		<li><%= link_to beer.name, beer_path(beer) %></li>
-	<% end %>
-</ul>
-<div>
-<%= link_to "Browse Beer Selection", beers_path %>
-</div>
+<% if !@user.beers.empty? %>
+	<h2>My Favorite Beers</h2>
+	<ul>
+		<% @user.beers.each do |beer| %>
+			<li><%= link_to beer.name, beer_path(beer), class: "hyperlink" %></li>
+		<% end %>
+	</ul>
+<% else %>
+	<h2> Click <%= link_to "Here", beers_path, class: "hyperlink" %> To Favorite Some Beers! </h2>
+<% end %>
 
 <% if get_current_user.user_type == "Retailer" && Retailer.where(user_id: get_current_user.id).empty? %>
 <h2> Create Retailer Listing </h2>

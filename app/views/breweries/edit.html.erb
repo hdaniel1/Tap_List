@@ -1,3 +1,5 @@
 <h1>Edit <%= @brewery.name.capitalize %></h1>
 
 <%= render "brewery" %>
+
+<%= link_to "Back to Brewery Page", brewery_path(@brewery), class: "hyperlink" %>

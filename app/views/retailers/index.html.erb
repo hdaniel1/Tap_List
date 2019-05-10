@@ -1,0 +1,6 @@
+<h1>Retailers List</h1>
+<ul>
+<% @retailers.each do |retailer| %>
+	<li><%= link_to retailer.name, retailer_path(retailer) %></li>
+<% end %>
+</ul>

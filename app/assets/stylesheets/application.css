@@ -108,6 +108,12 @@ field_with_errors {
   text-decoration: none;
 }
 
+.allbeers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 30px;
+}
+
 
 
 
@@ -121,4 +127,20 @@ field_with_errors {
   color:white;
 }
 
+.btn {
+  color:white;
+  }
+
+.hyperlink {
+  color:blue;
+}
+
+#account_creation {
+  color:white;
+}
+
+#card {
+  width: 100%;
+  justify-self: center;
+}
 

@@ -1,0 +1,9 @@
+.bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #eee;
+  padding: 20px;
+  background-color:#333;
+  /*background-image: url("./kegs.jpg");*/
+}

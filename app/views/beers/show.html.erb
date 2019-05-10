@@ -1,6 +1,6 @@
 <h1><%= @beer.name %> Information</h1>
 
-<%= image_tag(@beer.image) if @beer.image.attached? %>
+<%= image_tag(@beer.image) if @beer.image.attached?%>
 <ul>
 	<li>Style: <%= @beer.style %></li>
 	<li>ABV: <%= number_with_precision(@beer.ABV, precision:2) %></li>
@@ -10,41 +10,44 @@
 	<li>Availability: <%= @beer.availability %></li>
 	<li>On Site Purchase? <%= @beer.on_site_purchase %></li>
 	<li>Glass Size: <%= @beer.glass_size %> oz</li>
-	<li>Brewery: <%= link_to @beer.brewery.name, brewery_path(@beer.brewery) %></li>
+	<li>Brewery: <%= link_to @beer.brewery.name, brewery_path(@beer.brewery), class: "hyperlink" %></li>
 </ul>
 
 <% if !@beer.image.attached? %>
 <%= form_for @beer do |b| %>
-	<%= b.file_field :image %><br>
+	<%= b.file_field :image %>
 	<%= b.submit "Add Image" %>
 <% end %>
 <% end %>
 
-
+<% if @beer.description %>
 <div>
-Description:
+<b>Description:</b>
 <%= @beer.description %>
 </div>
+<% end %>
 
 <% if user_owns_brewery %>
 	<div>
-	<%= link_to "Edit this Beer", edit_beer_path(@beer) %>
+	<%= link_to "Edit this Beer", edit_beer_path(@beer), class: "hyperlink" %>
 	</div>
 <% end %>
 
+<% if !@beer.tags.empty? %>
 <h2>Tags associated with this beer</h2>
 <ul>
 	<% @beer.tags.each do |tag| %>
-		<li><%= link_to tag.description, beers_path(beer_tag_description: tag.description) %></li>
+		<li><%= link_to tag.description, beers_path(beer_tag_description: tag.description), class: "hyperlink" %></li>
 	<% end %>
 </ul>
+<% end %>
 
 <% if !@beer.retailers.empty? %>
 <h2>Retailers Offering This Beer</h2>
 
 <ul>
 	<% @beer.retailers.each do |retailer| %>
-		<li><%= link_to retailer.name, retailer_path(retailer) %></li>
+		<li><%= link_to retailer.name, retailer_path(retailer), class: "hyperlink" %></li>
 	<% end %>
 </ul>
 <% end %>
@@ -68,13 +71,18 @@ Description:
 	<%= rb.label "Number of Barrels" %>
 	<%= rb.number_field :number_of_barrels %>
 	</div>
+	<div>
+	<%= rb.label "Available?" %>
+	<%= rb.select :available, [['Yes', true], ['No', false]] %>
+	</div>
 	<%= rb.submit "Add To Tap" %>
 <% end %>
 <% end %>
 
 <% if my_favorite_beer %>
 		<h2>Here's what you think</h2>
-		<h3>"<%= my_favorite_beer.review %>"</h3>
+		<h3>"<%= my_favorite_beer.review if my_favorite_beer.review != "" %>"</h3>
+
 	<% else %>
 		<h2>Favorite this Beer</h2>
 		<%= form_for @favorite_beer do |f| %>
@@ -107,5 +115,5 @@ Description:
 </div><br>
 
 <div>
-<%= link_to "Back to Beer List", beers_path %>
+<%= link_to "Back to Beer List", beers_path, class: "hyperlink" %>
 </div>
