@@ -14,44 +14,49 @@ Description:<br> <%= @brewery.description %><br><br>
 	</div>
 <% end %>
 
-<table class="table">
-	<thead>
-    <tr>
-<h2>Available Beers</h2>
-<ol>
 
-<% @brewery.get_available_beers.each do |beer| %>
-		<th scope="col"><%= link_to beer.name, beer_path(beer) %></th>
-		
-		<ul>
-		<%= beer.style %>
-		<li> <%= beer.ABV %>% </li>
-		<li>$<%= number_with_precision(beer.price, precision: 2) %> per <%= beer.glass_size %> oz bottle</li>
-	</ul>
-<% end %>
-</ol>
-</tr>
-</thead>
-</table>
+
+<h2>Beers on Tap</h2>
+<div class="allbeers">
+<%= @brewery.get_available_beers.each do |beer| %>
+	<div class="card" style="width: 18rem;">
+	  <img class="card-img-top" src="..." alt="Card image cap">
+	  <div class="card-body">
+	    <h5 class="card-title"><%= link_to beer.name, beer_path(beer) %></h5>
+	    <p class="card-text">
+				<%= beer.description %>
+				<%= beer.style %>
+				<p><%= beer.ABV %>%</p>
+				<p>$<%= number_with_precision(beer.price, precision: 2) %> per <%= beer.glass_size %> oz pour</p>
+			</p>
+	    <a href="#" class="btn btn-primary">Beer Info</a>
+	  </div>
+	</div>
+<%end%>
 </div>
 
-<% if @brewery.get_unavailable_beers %>
+
 <h2>Unavailable Beers</h2>
-<ol>
-<% @brewery.get_unavailable_beers.each do |beer| %>
-<li><%= link_to beer.name, beer_path(beer) %></li>
-	<ul>
-		<li><%= beer.style %> </li>
-		<li> <%= beer.ABV %>% </li>
-		<li>$<%= number_with_precision(beer.price, precision: 2) %> per <%= beer.glass_size %> oz bottle</li>
-	</ul>
-<% end %>
-</ol>
-<% end %>
+<div class="allbeers">
+<%= @brewery.get_unavailable_beers.each do |beer| %>
+	<div class="card" style="width: 18rem;">
+	  <img class="card-img-top" src="..." alt="Card image cap">
+	  <div class="card-body">
+	    <h5 class="card-title"><%= link_to beer.name, beer_path(beer) %></h5>
+	    <p class="card-text">
+				<%= beer.description %>
+				<%= beer.style %>
+				<p><%= beer.ABV %>%</p>
+			</p>
+	    <a href="#" class="btn btn-primary">Beer Info</a>
+	  </div>
+	</div>
+<%end%>
+</div>
 
 
 
-<%#only show add new offering if session user is brewery owner%>
+
 <% if belongs_to_current_user %>
 <h2>Add a new offering</h2>
 
