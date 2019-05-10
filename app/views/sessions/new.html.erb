@@ -1,29 +1,31 @@
 <% content_for :body_class, "login_page" %>
 <div class = "login_block">
-<h1 class="center_element">Login</h1>
+
+<h1 class="center_element">TapList</h1>
 
 <% if flash["notice"] %>
 <div class="error"><%= flash["notice"] %></div>
-
 <% end %>
+
+    <div class="center_element">
 
 <%= form_for "/login" do %>
     <br>
-    <div class="center_element">
-    <%= label :username, "Username" %>
-    <%= text_field_tag :username %>
+
+    <%= text_field_tag :username, nil, placeholder: "Username" %>
     </br>
     <br>
-    <%= label :password, "Password" %>
-    <%= password_field_tag :password %>
+
+    <%= password_field_tag :password, nil, placeholder: "Password" %>
     </br>
     <br>
-    <%= submit_tag "Login" %>
+
+    <%= submit_tag "Login", class: "button1" %>
     </br>
 <% end %>
 </div>
 <div id="new_account">
 <br>Don't have an account?</br>
-<%= link_to "Click here to create one", new_user_path %>
+<%= link_to "Sign up", new_user_path %>
 </div>
 </div>
