@@ -14,17 +14,26 @@ Description:<br> <%= @brewery.description %><br><br>
 	</div>
 <% end %>
 
+<table class="table">
+	<thead>
+    <tr>
 <h2>Available Beers</h2>
 <ol>
+
 <% @brewery.get_available_beers.each do |beer| %>
-<li><%= link_to beer.name, beer_path(beer) %></li>
-	<ul>
-		<li><%= beer.style %> </li>
+		<th scope="col"><%= link_to beer.name, beer_path(beer) %></th>
+		
+		<ul>
+		<%= beer.style %>
 		<li> <%= beer.ABV %>% </li>
 		<li>$<%= number_with_precision(beer.price, precision: 2) %> per <%= beer.glass_size %> oz bottle</li>
 	</ul>
 <% end %>
 </ol>
+</tr>
+</thead>
+</table>
+</div>
 
 <% if @brewery.get_unavailable_beers %>
 <h2>Unavailable Beers</h2>
@@ -39,6 +48,7 @@ Description:<br> <%= @brewery.description %><br><br>
 <% end %>
 </ol>
 <% end %>
+
 
 
 <%#only show add new offering if session user is brewery owner%>
