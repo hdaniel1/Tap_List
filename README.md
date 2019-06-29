@@ -31,12 +31,14 @@ High-Level
 5. Users can use tags to search for beers. Favorite / review beers?
 
 User Stories (Skateboard)
+
 	1. As a brewery, I want to…
 		-Log in 
 		-Add a new beer to my selection
 		-Manage my selection (update existing beers, add limited releases, etc)
 		-See all the retailers selling my beers
 		-Manage inventory
+		
 	2. As a retailer, I want to…
 		-Log in
 		-Search for beers across breweries
@@ -46,6 +48,7 @@ User Stories (Skateboard)
 			-Individual beer inventory (Availability)
 		-Manage my tap list
 		-Manage inventory
+		
 	3. As a customer, I want to…
 		-Log in
 		-Use adjective tags to search for my preferred beers
