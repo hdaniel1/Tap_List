@@ -3,7 +3,7 @@
 -https://github.com/gamache/beeradvocate
 -https://github.com/tylerhunt/brewery_db -->
 
-5 Models
+Models
 1. Breweries (1:N Beers)
 2. Beers (N:1 breweries), (N:N retailers) 
 3. Retailers
@@ -55,12 +55,6 @@ User Stories (Skateboard)
 		-Choose adjective tags for beers
 		-Upvote / Downvote beer tags
 
-CSS/HTML
-	-Beer Show page
-		-
-		
-		
-	
 Release 2.0
 	-Reviews?
 	-Breweries list limited release beers 	-Ability for retailers to purchase beers from breweries
